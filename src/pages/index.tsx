@@ -3,6 +3,15 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useEffect } from "react";
+import { db } from "./_app";
+import {
+  getDoc,
+  deleteDoc,
+  doc,
+  setDoc,
+  getDocs,
+  collection,
+} from "firebase/firestore";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,6 +19,56 @@ export default function Home() {
   useEffect(() => {
     console.log("WOELD");
   }, []);
+
+  const handleCreate = async () => {
+    try {
+      // const res = await addDoc(collection(db, "users"), {
+      //   first: "CHO",
+      //   middle: "YUNSIK",
+      //   born: 961209,
+      // });
+      const project = doc(db, "portfolio", "portfolio");
+      const res = await setDoc(
+        project,
+        { name: "포트폴리오", regDt: "2024.01.30", contents: "성공했습니다." },
+        { merge: true },
+      );
+      console.log(res);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const handleRead = async () => {
+    try {
+      const project = doc(db, "portfolio", "allreborn");
+      const res = await getDoc(project);
+      const res2 = await getDocs(collection(db, "portfolio"));
+      console.log(res.data());
+      console.log(res2.docs);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      const project = doc(db, "portfolio", "portfolio");
+      const res = await deleteDoc(project);
+      console.log(res);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  // 컬렉션조회 (목록조회) getDocs(collection(db, collectionName))
+  // 문서조회 (상세조회) getDoc(doc(db, collectionName, docsName))
+
+  // 컬렉션&문서생성 addDoc(doc(db, collectionName), {fieldData})
+
+  // 문서수정 updateDoc(doc(db, collectionName, docsName), {fieldData})
+
+  // 문서삭제 deleteDoc(doc(db, collectionName, docsName))
 
   return (
     <>
@@ -24,6 +83,15 @@ export default function Home() {
           <p>
             Get started by editing&nbsp;
             <code className={styles.code}>src/pages/index.tsx</code>
+            <button type="button" onClick={handleCreate}>
+              PUSH USER
+            </button>
+            <button type="button" onClick={handleRead}>
+              GET USER
+            </button>
+            <button type="button" onClick={handleDelete}>
+              DELETE USER
+            </button>
           </p>
           <div>
             <a
