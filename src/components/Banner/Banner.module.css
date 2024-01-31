@@ -1,0 +1,36 @@
+.bannerWrapper {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
+.txtWrapper {
+  flex: 1;
+  color: white;
+  padding: 20px;
+}
+
+.title {
+  font-size: 76px;
+  line-height: 90px;
+  word-break: keep-all;
+}
+
+.subTxt {
+  display: block;
+  margin-top: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  color: gray;
+}
+
+.imgWrapper {
+  position: relative;
+  flex: 1;
+  height: 400px;
+}
+
+.imgBanner {
+  object-fit: contain;
+}

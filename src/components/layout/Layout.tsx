@@ -17,7 +17,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       {isNotOriginPath(<Header />)}
       <main
         style={isNotOriginPath({
-          paddingTop: "75px",
           paddingBottom: "200px",
         })}
       >
