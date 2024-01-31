@@ -1,16 +1,11 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 // import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDcJPMQUIbFQBRWmQtMSoXziEolg_Mcg9o",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: "thanos-ba3dc.firebaseapp.com",
   databaseURL:
     "https://thanos-ba3dc-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -21,11 +16,10 @@ const firebaseConfig = {
   measurementId: "G-H11JC7KM7H",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// export const analytics = getAnalytics(app);
 export const db = getFirestore(app);
+// export const analytics = getAnalytics(app);
 
 export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
