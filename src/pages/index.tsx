@@ -70,6 +70,7 @@ export default function Home() {
     <>
       <Head>
         <title>포트폴리오 홈</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
         <div>
