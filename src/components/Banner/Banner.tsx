@@ -16,7 +16,8 @@ const Banner = () => {
         <Image
           src="/assets/img/img_camera.png"
           alt="배너"
-          fill
+          width={550}
+          height={400}
           priority
           className={s.imgBanner}
         />
