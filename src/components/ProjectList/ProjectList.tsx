@@ -6,7 +6,7 @@ import s from "./ProjectList.module.css";
 const ProjectList = () => {
   return (
     <div className={s.wrapper}>
-      <strong className={s.title}>프로젝트</strong>
+      <strong className={s.title}>PROJECTS</strong>
       <div>
         <Swiper
           slidesPerView={3}

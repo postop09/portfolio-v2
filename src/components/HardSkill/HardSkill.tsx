@@ -8,7 +8,7 @@ const HardSkill = () => {
         <Image
           src="/assets/img/img_camera.png"
           alt=""
-          width={320}
+          width={340}
           height={400}
           priority
           className={s.imgSkill}

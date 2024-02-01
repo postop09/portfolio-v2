@@ -1,26 +1,30 @@
 .wrapper {
   position: relative;
+  width: 400px;
   padding: 40px 20px;
   text-align: left;
   overflow: hidden;
   background-color: #f4f4f4;
   transition: all 0.2s;
+  cursor: default;
 }
 
-.wrapper:hover {
+.wrapper:hover,
+.wrapper:focus {
   background-color: #5865f5;
 }
 
 .imgSkill {
   display: block;
   object-fit: contain;
-  transform: translateX(30%);
+  transform: translateX(40%);
   transition: all 0.2s;
 }
 
-.wrapper:hover .imgSkill {
+.wrapper:hover .imgSkill,
+.wrapper:focus .imgSkill {
   transform: translateX(0);
-  opacity: 0;
+  opacity: 0.05;
 }
 
 .listWrapper {
@@ -30,7 +34,8 @@
   opacity: 0;
 }
 
-.wrapper:hover .listWrapper {
+.wrapper:hover .listWrapper,
+.wrapper:focus .listWrapper {
   opacity: 1;
 }
 
