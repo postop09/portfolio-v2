@@ -1,8 +1,8 @@
 import s from "./SoftSkill.module.css";
 
-const SoftSkill = () => {
+const SoftSkill = ({ isHover }: { isHover: boolean }) => {
   return (
-    <div className={s.wrapper}>
+    <div className={`${s.wrapper} ${isHover ? s.on : ""}`}>
       <strong className={s.title}>SOFT SKILL</strong>
       <p className={s.contents}>
         My name is Cho Yun Sik. Let me introduce myself. Holy moly jesus

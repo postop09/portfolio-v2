@@ -1,7 +1,7 @@
 import Banner from "@/components/Banner/Banner";
 import HardSkillList from "@/components/HardSkillList/HardSkillList";
 import ProjectList from "@/components/ProjectList/ProjectList";
-import SoftSkill from "@/components/SoftSkill/SoftSkill";
+import SoftSkillList from "@/components/SoftSkillList/SoftSkillList";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -11,7 +11,7 @@ const index = () => {
       <Banner />
       <ProjectList />
       <HardSkillList />
-      <SoftSkill />
+      <SoftSkillList />
     </section>
   );
 };

@@ -1,13 +1,13 @@
 .wrapper {
   background-color: #e4e7eb;
-  width: 200px;
+  width: 246.6px;
   height: 200px;
   padding: 40px 20px;
   transition: all 0.15s;
   overflow: hidden;
 }
 
-.wrapper:hover {
+.on {
   background-color: #212530;
   width: 400px;
   height: 300px;
@@ -24,11 +24,11 @@
 .contents {
   font-size: 18px;
   letter-spacing: 1px;
-  line-height: 28px;
   color: white;
+  line-height: 28px;
   opacity: 0;
 }
 
-.wrapper:hover .contents {
+.on .contents {
   opacity: 1;
 }
