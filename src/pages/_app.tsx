@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import Layout from "@/components/Layout/Layout";
 import "@/styles/global.css";
+import "@/styles/slide.css";
 // import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {

@@ -72,7 +72,7 @@ export default function Home() {
         <title>포트폴리오 홈</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main>
+      <main style={{ width: "100vw", overflow: "hidden" }}>
         <div>
           <button type="button" onClick={handleCreate}>
             생성

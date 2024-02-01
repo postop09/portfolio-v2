@@ -18,6 +18,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <main
         style={isNotOriginPath({
           paddingBottom: "200px",
+          overflow: "hidden",
         })}
       >
         {children}

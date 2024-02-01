@@ -8,7 +8,7 @@ const Project = () => {
         <Image
           src="/assets/img/img_banner.jpg"
           alt=""
-          width={345}
+          width={380}
           height={480}
           priority
           className={s.imgProject}
