@@ -15,14 +15,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       {isNotOriginPath(<Header />)}
-      <main
-        style={isNotOriginPath({
-          paddingBottom: "200px",
-          overflow: "hidden",
-        })}
-      >
-        {children}
-      </main>
+      <main style={{ overflow: "hidden" }}>{children}</main>
       {isNotOriginPath(<Footer />)}
     </div>
   );

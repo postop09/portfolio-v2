@@ -1,0 +1,39 @@
+.wrapper {
+  height: 400px;
+  margin-top: 80px;
+  padding: 60px 20px;
+  background-color: black;
+  color: #bbb;
+}
+
+.followTitle {
+  font-size: 24px;
+}
+
+.followWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.followListWrapper {
+  display: flex;
+  margin-left: 80px;
+}
+
+.divLine {
+  border-color: #2f2f2f;
+  margin-bottom: 30px;
+}
+
+.emptySpace {
+  margin-bottom: 20px;
+}
+
+.warnningTxt {
+  display: block;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 18px;
+}
