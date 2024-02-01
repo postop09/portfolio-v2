@@ -1,0 +1,47 @@
+.wrapper {
+  position: relative;
+  padding: 40px 20px;
+  text-align: left;
+  overflow: hidden;
+  background-color: #f4f4f4;
+  transition: all 0.2s;
+}
+
+.wrapper:hover {
+  background-color: #5865f5;
+}
+
+.imgSkill {
+  display: block;
+  object-fit: contain;
+  transform: translateX(30%);
+  transition: all 0.2s;
+}
+
+.wrapper:hover .imgSkill {
+  transform: translateX(0);
+  opacity: 0;
+}
+
+.listWrapper {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  opacity: 0;
+}
+
+.wrapper:hover .listWrapper {
+  opacity: 1;
+}
+
+.skill {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 35px;
+}
+
+.txtCategory {
+  font-size: 28px;
+  font-weight: 500;
+}
