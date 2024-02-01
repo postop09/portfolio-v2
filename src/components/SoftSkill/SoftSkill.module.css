@@ -1,0 +1,34 @@
+.wrapper {
+  background-color: #e4e7eb;
+  width: 246.6px;
+  height: 200px;
+  padding: 40px 20px;
+  transition: all 0.15s;
+  overflow: hidden;
+}
+
+.on {
+  background-color: #212530;
+  width: 400px;
+  height: 300px;
+  padding: 40px;
+  color: white;
+}
+
+.title {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.contents {
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: white;
+  line-height: 28px;
+  opacity: 0;
+}
+
+.on .contents {
+  opacity: 1;
+}

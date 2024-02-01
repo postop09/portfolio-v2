@@ -1,7 +1,9 @@
-import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import Layout from "@/components/Layout/Layout";
+import "@/styles/global.css";
+import "@/styles/slide.css";
 // import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -22,5 +24,11 @@ export const db = getFirestore(app);
 // export const analytics = getAnalytics(app);
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
+  );
 }

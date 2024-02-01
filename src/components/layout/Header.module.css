@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  z-index: 100;
+}
+
+.title {
+  font-size: 24px;
+  letter-spacing: 5px;
+}
+
+.profile {
+  border: 1px solid white;
+  border-radius: 50%;
+}

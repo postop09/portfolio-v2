@@ -1,0 +1,25 @@
+.wrapper {
+  margin-top: 100px;
+  padding: 60px 0;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.title {
+  display: block;
+  padding: 0 0 20px;
+  font-size: 42px;
+}
+
+.listWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.listWrapper > li {
+  border-right: 1px solid #e1e1e1;
+}
+
+.listWrapper > li:last-child {
+  border: none;
+}
