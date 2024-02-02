@@ -1,4 +1,5 @@
 import ProjectBanner from "@/components/ProjectBanner/ProjectBanner";
+import ProjectLink from "@/components/ProjectLink/ProjectLink";
 import ProjectSpec from "@/components/ProjectSpec/ProjectSpec";
 import ProjectSummary from "@/components/ProjectSummary/ProjectSummary";
 import ProjectVideo from "@/components/ProjectVideo/ProjectVideo";
@@ -11,6 +12,7 @@ const index = () => {
       <ProjectSpec />
       <ProjectVideo />
       <ProjectSummary />
+      <ProjectLink />
     </div>
   );
 };
