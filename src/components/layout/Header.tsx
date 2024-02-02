@@ -1,10 +1,15 @@
 import Image from "next/image";
 import s from "./Header.module.css";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <header className={s.wrapper}>
-      <h1 className={s.title}>CYS</h1>
+      <h1>
+        <Link href="/" className={s.title}>
+          CYS
+        </Link>
+      </h1>
       <Image
         src="/assets/favicon/favicon-32x32.png"
         width={24}
