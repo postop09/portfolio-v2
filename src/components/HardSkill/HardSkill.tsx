@@ -1,12 +1,18 @@
 import Image from "next/image";
 import s from "./HardSkill.module.css";
 
-const HardSkill = () => {
+type Props = {
+  title: string;
+  src: string;
+  data: string[];
+};
+
+const HardSkill = ({ title, src, data }: Props) => {
   return (
     <div>
       <button type="button" className={s.wrapper}>
         <Image
-          src="/assets/img/img_camera.png"
+          src={src}
           alt=""
           width={340}
           height={400}
@@ -14,10 +20,15 @@ const HardSkill = () => {
           className={s.imgSkill}
         />
         <ul className={s.listWrapper}>
-          <li className={s.skill}>React.js</li>
-          <li className={s.skill}>TypeScript</li>
+          {data.map((skill, index) => {
+            return (
+              <li key={index} className={s.skill}>
+                {skill}
+              </li>
+            );
+          })}
         </ul>
-        <strong className={s.txtCategory}>Front-End</strong>
+        <strong className={s.txtCategory}>{title}</strong>
       </button>
     </div>
   );
