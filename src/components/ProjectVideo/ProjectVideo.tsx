@@ -1,11 +1,15 @@
 import s from "./ProjectVideo.module.css";
 
-const ProjectVideo = () => {
+type Props = {
+  src: string | undefined;
+};
+
+const ProjectVideo = ({ src }: Props) => {
   return (
     <section className={s.wrapper}>
       <h3></h3>
       <video
-        src="/assets/video_lolchamp.mp4"
+        src={src || "/assets/video_lolchamp.mp4"}
         controls
         className={s.video}
       ></video>
