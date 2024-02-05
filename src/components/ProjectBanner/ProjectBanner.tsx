@@ -12,7 +12,7 @@ const ProjectBanner = ({ src, title, period, isTeamProject }: Props) => {
   return (
     <section className={s.wrapper}>
       <Image
-        src={src || "/assets/img/img_banner.jpg"}
+        src={src || ""}
         alt=""
         fill
         sizes="auto"
