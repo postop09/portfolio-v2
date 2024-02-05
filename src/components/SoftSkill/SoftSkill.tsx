@@ -1,13 +1,16 @@
 import s from "./SoftSkill.module.css";
 
-const SoftSkill = ({ isHover }: { isHover: boolean }) => {
+type Props = {
+  isHover: boolean;
+  title: string;
+  contents: string;
+};
+
+const SoftSkill = ({ isHover, title, contents }: Props) => {
   return (
     <div className={`${s.wrapper} ${isHover ? s.on : ""}`}>
-      <strong className={s.title}>SOFT SKILL</strong>
-      <p className={s.contents}>
-        My name is Cho Yun Sik. Let me introduce myself. Holy moly jesus
-        christmas. When i was your man, you make me full.
-      </p>
+      <strong className={s.title}>{title}</strong>
+      <p className={s.contents}>{contents}</p>
     </div>
   );
 };

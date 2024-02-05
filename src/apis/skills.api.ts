@@ -1,8 +1,8 @@
 import { CONST_SKILLS } from "@/constants/skills.const";
 import { getCollection } from "./firebase.api";
-import { SkillsDTO } from "@/types/skills.type";
+import { SkillsDTO, SoftSkillDTO } from "@/types/skills.type";
 
-export const getSkills = async (): Promise<SkillsDTO & any> => {
+export const getSkills = async (): Promise<SkillsDTO> => {
   const skills = await getCollection("skills");
   return {
     title: CONST_SKILLS.HARD_SKILL.title,
@@ -11,7 +11,7 @@ export const getSkills = async (): Promise<SkillsDTO & any> => {
   };
 };
 
-export const getTools = async () => {
+export const getTools = async (): Promise<SkillsDTO> => {
   const tools = await getCollection("tools");
   return {
     title: CONST_SKILLS.TOOL.title,
@@ -20,7 +20,7 @@ export const getTools = async () => {
   };
 };
 
-export const getCommunicationTools = async () => {
+export const getCommunicationTools = async (): Promise<SkillsDTO> => {
   const tools = await getCollection("communication-tools");
   return {
     title: CONST_SKILLS.COMMUNICATION_TOOL.title,
@@ -29,6 +29,6 @@ export const getCommunicationTools = async () => {
   };
 };
 
-export const getSofySkills = async () => {
-  console.log("soft skills");
+export const getSoftSkills = async (): Promise<SoftSkillDTO[]> => {
+  return await getCollection("soft-skills");
 };

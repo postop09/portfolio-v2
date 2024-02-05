@@ -1,24 +1,29 @@
 import { useState } from "react";
 import SoftSkill from "../SoftSkill/SoftSkill";
 import s from "./SoftSkillList.module.css";
+import useGetSoftSkills from "@/hooks/useGetSoftSkills";
 
 const SoftSkillList = () => {
-  const DATA = [1, 2, 3, 4];
   const [tabIndex, setTabIndex] = useState(1);
+  const { softSkillList } = useGetSoftSkills();
 
   return (
     <div className={s.wrapper}>
       <strong className={s.title}>SOFT SKILLS</strong>
       <ul className={s.listWrapper}>
-        {DATA.map((item, index) => {
+        {softSkillList.map((softSkill, index) => {
           return (
             <li
-              key={item}
+              key={softSkill.id}
               onMouseOver={() => {
                 return setTabIndex(index);
               }}
             >
-              <SoftSkill isHover={index === tabIndex} />
+              <SoftSkill
+                title={softSkill.title}
+                contents={softSkill.contents}
+                isHover={index === tabIndex}
+              />
             </li>
           );
         })}

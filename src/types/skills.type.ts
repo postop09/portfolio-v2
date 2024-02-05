@@ -9,3 +9,9 @@ export type SkillsDTO = {
   src: string;
   data: Codeset[];
 };
+
+export type SoftSkillDTO = {
+  id: string;
+  title: string;
+  contents: string;
+};

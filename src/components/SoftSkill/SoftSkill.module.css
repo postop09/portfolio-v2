@@ -24,8 +24,9 @@
 .contents {
   font-size: 18px;
   letter-spacing: 1px;
-  color: white;
   line-height: 28px;
+  word-break: keep-all;
+  color: white;
   opacity: 0;
 }
 
