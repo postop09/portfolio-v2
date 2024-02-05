@@ -1,17 +1,18 @@
 import Image from "next/image";
 import s from "./Project.module.css";
+import Link from "next/link";
 
 type Props = {
   src: string;
   title: string;
   period: string;
-  onClick?: () => void;
+  href: string;
 };
 
-const Project = ({ src, title, period, onClick }: Props) => {
+const Project = ({ src, title, period, href }: Props) => {
   return (
     <article className={s.wrapper}>
-      <button type="button" onClick={onClick} className={s.wrapper}>
+      <Link href={href} className={s.wrapper}>
         <Image
           src={src}
           alt=""
@@ -33,7 +34,7 @@ const Project = ({ src, title, period, onClick }: Props) => {
             />
           </div>
         </div>
-      </button>
+      </Link>
     </article>
   );
 };

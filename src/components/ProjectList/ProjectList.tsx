@@ -3,10 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import s from "./ProjectList.module.css";
 import useGetProjects from "@/hooks/useGetProjects";
-import { useRouter } from "next/navigation";
 
 const ProjectList = () => {
-  const router = useRouter();
   const { projectList } = useGetProjects();
 
   return (
@@ -28,9 +26,7 @@ const ProjectList = () => {
                   src={project.image}
                   title={project.title}
                   period={project.period}
-                  onClick={() => {
-                    router.push(`/project/?id=${project.id}`);
-                  }}
+                  href={`/project/${project.id}`}
                 />
               </SwiperSlide>
             );

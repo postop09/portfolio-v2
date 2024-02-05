@@ -1,11 +1,26 @@
+import { getProject } from "@/apis/projects.api";
 import ContentsCard from "@/components/ContentsCard/ContentsCard";
 import ProjectBanner from "@/components/ProjectBanner/ProjectBanner";
 import ProjectLinkList from "@/components/ProjectLinkList/ProjectLinkList";
 import ProjectSpec from "@/components/ProjectSpec/ProjectSpec";
 import ProjectSummary from "@/components/ProjectSummary/ProjectSummary";
 import ProjectVideo from "@/components/ProjectVideo/ProjectVideo";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
-const index = () => {
+const Id = () => {
+  const { query } = useRouter();
+
+  useEffect(() => {
+    const get = async () => {
+      if (typeof query.id === "string") {
+        const res = await getProject(query.id);
+        console.log(res);
+      }
+    };
+    get();
+  }, [query]);
+
   return (
     <div>
       <h2>PROJECT DETAIL</h2>
@@ -31,4 +46,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Id;
