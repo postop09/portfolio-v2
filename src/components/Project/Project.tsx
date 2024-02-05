@@ -1,12 +1,19 @@
 import Image from "next/image";
 import s from "./Project.module.css";
 
-const Project = () => {
+type Props = {
+  src: string;
+  title: string;
+  period: string;
+  onClick?: () => void;
+};
+
+const Project = ({ src, title, period, onClick }: Props) => {
   return (
     <article className={s.wrapper}>
-      <button type="button" className={s.wrapper}>
+      <button type="button" onClick={onClick} className={s.wrapper}>
         <Image
-          src="/assets/img/img_banner.jpg"
+          src={src}
           alt=""
           width={380}
           height={480}
@@ -14,9 +21,9 @@ const Project = () => {
           className={s.imgProject}
         />
         <div className={s.txtWrapper}>
-          <small className={s.subTxt}>SONY-a6000</small>
+          <small className={s.subTxt}>{period || "-"}</small>
           <div className={s.titleWrapper}>
-            <h3 className={s.title}>프레임 하나의 힘</h3>
+            <h3 className={s.title}>{title}</h3>
             <Image
               src="/assets/icon/icon_caret.png"
               alt="프로젝트 자세히 보러가기"

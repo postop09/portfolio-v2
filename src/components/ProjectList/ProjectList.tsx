@@ -2,8 +2,13 @@ import Project from "@/components/Project/Project";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import s from "./ProjectList.module.css";
+import useGetProjects from "@/hooks/useGetProjects";
+import { useRouter } from "next/navigation";
 
 const ProjectList = () => {
+  const router = useRouter();
+  const { projectList } = useGetProjects();
+
   return (
     <div className={s.wrapper}>
       <strong className={s.title}>PROJECTS</strong>
@@ -16,21 +21,20 @@ const ProjectList = () => {
           modules={[Pagination]}
           className="projectSwiper"
         >
-          <SwiperSlide>
-            <Project />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Project />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Project />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Project />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Project />
-          </SwiperSlide>
+          {projectList.map((project) => {
+            return (
+              <SwiperSlide key={project.id}>
+                <Project
+                  src={project.image}
+                  title={project.title}
+                  period={project.period}
+                  onClick={() => {
+                    router.push(`/project/?id=${project.id}`);
+                  }}
+                />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </div>

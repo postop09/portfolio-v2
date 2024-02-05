@@ -1,5 +1,5 @@
 import { db } from "@/pages/_app";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 
 export const getCollection = async (collectionName: string): Promise<any> => {
   try {
@@ -17,5 +17,20 @@ export const getCollection = async (collectionName: string): Promise<any> => {
   } catch (e) {
     console.log(e);
     return [];
+  }
+};
+
+export const getDocData = async (
+  collectionName: string,
+  docName: string,
+): Promise<any> => {
+  try {
+    const docRef = doc(db, collectionName, docName);
+    const docSnap = await getDoc(docRef);
+    if (docSnap) {
+      return docSnap.data();
+    }
+  } catch (e) {
+    console.log(e);
   }
 };
