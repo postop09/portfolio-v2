@@ -1,13 +1,8 @@
 import Image from "next/image";
 import s from "./HardSkill.module.css";
+import { SkillsDTO } from "@/types/skills.type";
 
-type Props = {
-  title: string;
-  src: string;
-  data: string[];
-};
-
-const HardSkill = ({ title, src, data }: Props) => {
+const HardSkill = ({ title, src, data }: SkillsDTO) => {
   return (
     <div>
       <button type="button" className={s.wrapper}>
@@ -20,10 +15,10 @@ const HardSkill = ({ title, src, data }: Props) => {
           className={s.imgSkill}
         />
         <ul className={s.listWrapper}>
-          {data.map((skill, index) => {
+          {data.map((skill) => {
             return (
-              <li key={index} className={s.skill}>
-                {skill}
+              <li key={skill.value} className={s.skill}>
+                {skill.name}
               </li>
             );
           })}
