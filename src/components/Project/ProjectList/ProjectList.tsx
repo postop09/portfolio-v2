@@ -31,9 +31,10 @@ const ProjectList = () => {
             return (
               <SwiperSlide key={project.id}>
                 <Project
-                  src={project.image}
+                  src={project.imagePath}
                   title={project.title}
-                  period={project.period}
+                  startDt={project.startDt}
+                  endDt={project.endDt}
                   href={`/project/${project.id}`}
                 />
               </SwiperSlide>

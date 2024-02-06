@@ -1,19 +1,27 @@
 import ProjectLink from "../ProjectLink/ProjectLink";
 import s from "./ProjectLinkList.module.css";
 
-const ProjectLinkList = () => {
+type Props = {
+  title: string | undefined;
+  githubUrl: string | undefined;
+  pageUrl: string | undefined;
+};
+
+const ProjectLinkList = ({ title, githubUrl, pageUrl }: Props) => {
   return (
     <section className={s.wrapper}>
       <h3 className={s.title}>
-        <span className={s.projectName}>롤챔</span> 정보를 위한 관련링크
+        <span className={s.projectName}>{title}</span> 정보를 위한 관련링크
       </h3>
       <ul className={s.listWrapper}>
         <li>
-          <ProjectLink />
+          <ProjectLink href={githubUrl} />
         </li>
-        <li>
-          <ProjectLink />
-        </li>
+        {pageUrl && (
+          <li>
+            <ProjectLink type="page" href={pageUrl} />
+          </li>
+        )}
       </ul>
     </section>
   );

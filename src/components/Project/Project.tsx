@@ -5,11 +5,12 @@ import Link from "next/link";
 type Props = {
   src: string;
   title: string;
-  period: string;
+  startDt: string;
+  endDt: string;
   href: string;
 };
 
-const Project = ({ src, title, period, href }: Props) => {
+const Project = ({ src, title, startDt, endDt, href }: Props) => {
   return (
     <article className={s.wrapper}>
       <Link href={href} className={s.wrapper}>
@@ -22,7 +23,7 @@ const Project = ({ src, title, period, href }: Props) => {
           className={s.imgProject}
         />
         <div className={s.txtWrapper}>
-          <small className={s.subTxt}>{period || "-"}</small>
+          <small className={s.subTxt}>{`${startDt} ~ ${endDt}` || "-"}</small>
           <div className={s.titleWrapper}>
             <h3 className={s.title}>{title}</h3>
             <Image

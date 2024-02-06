@@ -13,8 +13,8 @@ const ProjectCreate = () => {
   const [selectedVideo, setSelectedVideo] = useState<File>();
   const [fieldData, setFieldData] = useState<ProjectDTO>({
     contents: "",
-    isGithub: "",
-    isPage: "",
+    githubUrl: "",
+    pageUrl: "",
     isTeamProject: true,
     period: "",
     skills: [],
@@ -95,7 +95,10 @@ const ProjectCreate = () => {
               type="text"
               id="isGithub"
               onChange={(e) => {
-                return setFieldData({ ...fieldData, isGithub: e.target.value });
+                return setFieldData({
+                  ...fieldData,
+                  githubUrl: e.target.value,
+                });
               }}
             />
           </label>
@@ -105,7 +108,7 @@ const ProjectCreate = () => {
               type="text"
               id="isPage"
               onChange={(e) => {
-                return setFieldData({ ...fieldData, isPage: e.target.value });
+                return setFieldData({ ...fieldData, pageUrl: e.target.value });
               }}
             />
           </label>

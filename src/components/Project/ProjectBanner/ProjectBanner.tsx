@@ -4,11 +4,18 @@ import Image from "next/image";
 type Props = {
   src: string | undefined;
   title: string | undefined;
-  period: string | undefined;
+  startDt: string | undefined;
+  endDt: string | undefined;
   isTeamProject: boolean | undefined;
 };
 
-const ProjectBanner = ({ src, title, period, isTeamProject }: Props) => {
+const ProjectBanner = ({
+  src,
+  title,
+  startDt,
+  endDt,
+  isTeamProject,
+}: Props) => {
   return (
     <section className={s.wrapper}>
       <Image
@@ -21,9 +28,7 @@ const ProjectBanner = ({ src, title, period, isTeamProject }: Props) => {
       />
       <div className={s.txtWrapper}>
         <h3 className={s.title}>{title || "제목 없음"}</h3>
-        <small className={s.period}>
-          {period || "2024.01.01 ~ 2024.02.02"}
-        </small>
+        <small className={s.period}>{`${startDt} ~ ${endDt}`}</small>
         <small className={s.isTeamProject}>
           {isTeamProject ? "팀 프로젝트" : "개인 프로젝트"}
         </small>

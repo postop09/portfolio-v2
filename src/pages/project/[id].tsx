@@ -27,13 +27,14 @@ const Id = () => {
     <div>
       <h2>PROJECT DETAIL</h2>
       <ProjectBanner
-        src={project?.image}
+        src={project?.imagePath}
         title={project?.title}
-        period={project?.period}
+        startDt={project?.startDt}
+        endDt={project?.endDt}
         isTeamProject={project?.isTeamProject}
       />
-      <ProjectSpec />
-      <ProjectVideo src={project?.video} />
+      <ProjectSpec skills={project?.skills} />
+      <ProjectVideo src={project?.videoPath} />
       <ProjectSummary summary={project?.summary} />
       <ContentsCard />
       <ContentsCard type="switch" />
@@ -48,7 +49,11 @@ const Id = () => {
         <ContentsCard type="column" />
         <ContentsCard type="column" />
       </div>
-      <ProjectLinkList />
+      <ProjectLinkList
+        title={project?.title}
+        githubUrl={project?.githubUrl}
+        pageUrl={project?.pageUrl}
+      />
     </div>
   );
 };

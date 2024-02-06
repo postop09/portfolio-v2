@@ -3,12 +3,12 @@ import { Codeset } from "./skills.type";
 export type ProjectDTO = {
   id?: string;
   contents: string;
-  isGithub: boolean | string;
-  isPage: boolean | string;
+  githubUrl: string;
+  pageUrl: string;
   isTeamProject: boolean;
   startDt: string;
   endDt: string;
-  skills: Codeset[] | string[];
+  skills: Codeset[];
   summary: string;
   title: string;
   imagePath: string;
