@@ -1,9 +1,14 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import s from "./InputSkills.module.css";
 import useGetSkills from "@/hooks/useGetSkills";
 import { Codeset } from "@/types/skills.type";
 
-const InputSkills = () => {
+type Props = {
+  // eslint-disable-next-line no-unused-vars
+  onChange: (params: Codeset[]) => void;
+};
+
+const InputSkills = ({ onChange }: Props) => {
   const [selectedList, setSelectedList] = useState<Codeset[]>([]);
   const { skillCategory } = useGetSkills();
 
@@ -43,6 +48,12 @@ const InputSkills = () => {
     });
     setSelectedList(deletedList);
   };
+
+  useEffect(() => {
+    if (onChange) {
+      onChange(selectedList);
+    }
+  }, [selectedList]);
 
   return (
     <div className={s.wrapper}>

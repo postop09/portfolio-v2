@@ -1,10 +1,10 @@
 import { getProject } from "@/apis/projects.api";
 import ContentsCard from "@/components/ContentsCard/ContentsCard";
-import ProjectBanner from "@/components/ProjectBanner/ProjectBanner";
-import ProjectLinkList from "@/components/ProjectLinkList/ProjectLinkList";
-import ProjectSpec from "@/components/ProjectSpec/ProjectSpec";
-import ProjectSummary from "@/components/ProjectSummary/ProjectSummary";
-import ProjectVideo from "@/components/ProjectVideo/ProjectVideo";
+import ProjectBanner from "@/components/Project/ProjectBanner/ProjectBanner";
+import ProjectLinkList from "@/components/Project/ProjectLinkList/ProjectLinkList";
+import ProjectSpec from "@/components/Project/ProjectSpec/ProjectSpec";
+import ProjectSummary from "@/components/Project/ProjectSummary/ProjectSummary";
+import ProjectVideo from "@/components/Project/ProjectVideo/ProjectVideo";
 import { ProjectDTO } from "@/types/projects.type";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
