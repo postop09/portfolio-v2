@@ -1,5 +1,6 @@
-import { db } from "@/pages/_app";
+import { db, storage } from "@/pages/_app";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 export const getCollection = async (collectionName: string): Promise<any> => {
   try {
@@ -33,4 +34,16 @@ export const getDocData = async (
   } catch (e) {
     console.log(e);
   }
+};
+
+export const uploadFile = async (
+  files: FileList | null,
+  storageRoot: string,
+) => {
+  if (!files) {
+    return;
+  }
+  const storageRef = ref(storage, `${storageRoot}/${files[0]?.name}`);
+  const snap = await uploadBytes(storageRef, files[0]);
+  return await getDownloadURL(snap.ref);
 };

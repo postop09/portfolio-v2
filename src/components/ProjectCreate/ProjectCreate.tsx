@@ -27,8 +27,19 @@ const ProjectCreate = () => {
               return console.log(value);
             }}
           />
-          <InputFile title={"메인배너 이미지"} />
-          <InputFile title={"시연 영상"} />
+          <InputFile
+            title={"메인배너 이미지"}
+            onChange={(e) => {
+              return console.log(e);
+            }}
+          />
+          <InputFile
+            title={"시연 영상"}
+            type="video"
+            onChange={(e) => {
+              return console.log(e);
+            }}
+          />
           <label className={s.inputWrapper}>
             Github
             <input type="text" id="isGithub" />
