@@ -3,7 +3,7 @@ import s from "./InputTeamProject.module.css";
 
 type Props = {
   // eslint-disable-next-line no-unused-vars
-  onChange: (params?: boolean) => void;
+  onChange: (params: boolean) => void;
 };
 
 const InputTeamProject = ({ onChange }: Props) => {

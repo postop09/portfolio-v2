@@ -1,15 +1,17 @@
 import { Codeset } from "./skills.type";
 
 export type ProjectDTO = {
-  id: string;
+  id?: string;
   contents: string;
-  image: string;
-  isGithub: boolean;
-  isPage: boolean;
+  isGithub: boolean | string;
+  isPage: boolean | string;
   isTeamProject: boolean;
-  period: string;
+  startDt: string;
+  endDt: string;
   skills: Codeset[] | string[];
   summary: string;
   title: string;
-  video: string;
+  imagePath: string;
+  videoPath: string;
+  period: string;
 };
