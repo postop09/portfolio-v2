@@ -7,12 +7,13 @@ import s from "./ProjectCreate.module.css";
 import { ProjectDTO } from "@/types/projects.type";
 import { useState } from "react";
 import { createProject } from "@/apis/projects.api";
+import InputContents from "./InputContents/InputContents";
 
 const ProjectCreate = () => {
   const [selectedImage, setSelectedImage] = useState<File>();
   const [selectedVideo, setSelectedVideo] = useState<File>();
   const [fieldData, setFieldData] = useState<ProjectDTO>({
-    contents: "",
+    contents: [],
     githubUrl: "",
     pageUrl: "",
     isTeamProject: true,
@@ -31,8 +32,8 @@ const ProjectCreate = () => {
       return alert("파일이 선택되지 않았습니다. 다시 선택해주세요.");
     }
 
-    const imagePath = await uploadFile(selectedImage, "all-reborn");
-    const videoPath = await uploadFile(selectedVideo, "all-reborn");
+    const imagePath = await uploadFile(selectedImage, fieldData.title);
+    const videoPath = await uploadFile(selectedVideo, fieldData.title);
 
     if (!imagePath || !videoPath) {
       return alert(
@@ -85,6 +86,7 @@ const ProjectCreate = () => {
           />
           <InputFile
             title={"시연 영상"}
+            type="video"
             onChange={(value) => {
               return setSelectedVideo(value);
             }}
@@ -127,16 +129,12 @@ const ProjectCreate = () => {
               }}
             />
           </label>
-          <label className={s.inputWrapper}>
-            내용
-            <input
-              type="text"
-              id="contents"
-              onChange={(e) => {
-                return setFieldData({ ...fieldData, contents: e.target.value });
-              }}
-            />
-          </label>
+          <InputContents
+            storageRoot={fieldData.title}
+            onChange={(value) => {
+              return setFieldData({ ...fieldData, contents: value });
+            }}
+          />
           <button type="submit" className={s.createBtn} onClick={handleSubmit}>
             생성하기
           </button>

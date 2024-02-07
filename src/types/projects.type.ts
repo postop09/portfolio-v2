@@ -1,8 +1,16 @@
 import { Codeset } from "./skills.type";
 
+export type ProjectContents = {
+  type: string;
+  title: string;
+  contents: string;
+  imagePath: string;
+  columnGroupCode?: number;
+};
+
 export type ProjectDTO = {
   id?: string;
-  contents: string;
+  contents: ProjectContents[];
   githubUrl: string;
   pageUrl: string;
   isTeamProject: boolean;

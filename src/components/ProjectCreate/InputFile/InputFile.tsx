@@ -3,11 +3,12 @@ import { ChangeEvent, useEffect, useState } from "react";
 
 type Props = {
   title: string;
+  type?: "image" | "video";
   // eslint-disable-next-line no-unused-vars
   onChange: (params: File | undefined) => void;
 };
 
-const InputFile = ({ title, onChange }: Props) => {
+const InputFile = ({ title, type = "image", onChange }: Props) => {
   const [fileUrl, setFileUrl] = useState<File>();
 
   const handleSelectFile = async (e: ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +25,11 @@ const InputFile = ({ title, onChange }: Props) => {
   return (
     <label className={s.wrapper}>
       {title}
-      <input type="file" onChange={handleSelectFile} />
+      <input
+        type="file"
+        accept={type === "image" ? "image/*" : "video/*"}
+        onChange={handleSelectFile}
+      />
     </label>
   );
 };
