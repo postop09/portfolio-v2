@@ -4,9 +4,10 @@ import Image from "next/image";
 type Props = {
   href: string | undefined;
   type?: "github" | "page";
+  src?: string | undefined;
 };
 
-const ProjectLink = ({ href, type = "github" }: Props) => {
+const ProjectLink = ({ href, type = "github", src = "" }: Props) => {
   const isGithub = () => {
     return type === "github";
   };
@@ -14,11 +15,7 @@ const ProjectLink = ({ href, type = "github" }: Props) => {
   return (
     <a href={href} className={s.wrapper} target="_blank" rel="noreferrer">
       <Image
-        src={
-          isGithub()
-            ? "/assets/img/img_camera.png"
-            : "/assets/img/img_camera.png"
-        }
+        src={isGithub() ? "/assets/icon/icon_github.png" : src}
         alt=""
         width={300}
         height={400}

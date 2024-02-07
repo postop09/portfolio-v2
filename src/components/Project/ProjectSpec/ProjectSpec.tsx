@@ -15,6 +15,7 @@ const ProjectSpec = ({ skills }: Props) => {
           alt=""
           width={300}
           height={300}
+          priority
           className={s.imgMain}
         />
       </div>

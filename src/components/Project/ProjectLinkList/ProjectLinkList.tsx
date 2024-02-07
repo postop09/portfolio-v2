@@ -5,9 +5,10 @@ type Props = {
   title: string | undefined;
   githubUrl: string | undefined;
   pageUrl: string | undefined;
+  imgSrc: string | undefined;
 };
 
-const ProjectLinkList = ({ title, githubUrl, pageUrl }: Props) => {
+const ProjectLinkList = ({ title, githubUrl, pageUrl, imgSrc }: Props) => {
   return (
     <section className={s.wrapper}>
       <h3 className={s.title}>
@@ -19,7 +20,7 @@ const ProjectLinkList = ({ title, githubUrl, pageUrl }: Props) => {
         </li>
         {pageUrl && (
           <li>
-            <ProjectLink type="page" href={pageUrl} />
+            <ProjectLink type="page" href={pageUrl} src={imgSrc} />
           </li>
         )}
       </ul>

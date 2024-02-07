@@ -53,6 +53,7 @@ const Id = () => {
         title={project?.title}
         githubUrl={project?.githubUrl}
         pageUrl={project?.pageUrl}
+        imgSrc={project?.imagePath}
       />
     </div>
   );

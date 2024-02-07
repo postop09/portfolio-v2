@@ -3,7 +3,7 @@
   display: block;
   width: fit-content;
   height: fit-content;
-  background-color: black;
+  background-color: #262626;
   transition: all 0.1s;
 }
 
@@ -13,7 +13,7 @@
 
 .imgProject {
   display: block;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .txtWrapper {
