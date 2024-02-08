@@ -1,7 +1,9 @@
 import { Codeset } from "./skills.type";
 
+export type ContentsType = "default" | "reverse" | "column";
+
 export type ProjectContents = {
-  type: string;
+  type: ContentsType | string;
   title: string;
   contents: string;
   imagePath: string;
@@ -9,7 +11,7 @@ export type ProjectContents = {
 };
 
 export type ProjectContentsRow = {
-  [key: string]: ProjectContents | ProjectContents[];
+  [key: string]: ProjectContents[];
 };
 
 export type ProjectDTO = {

@@ -2,7 +2,10 @@ import s from "./ContentsCard.module.css";
 import Image from "next/image";
 
 type Props = {
-  type?: "default" | "reverse" | "column";
+  type?: "default" | "reverse" | "column" | string;
+  src: string;
+  title: string;
+  contents: string;
 };
 
 const ContentsCard = ({ type = "default" }: Props) => {

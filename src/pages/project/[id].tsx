@@ -1,6 +1,6 @@
 import { getProject } from "@/apis/projects.api";
-import ContentsCard from "@/components/ContentsCard/ContentsCard";
 import ProjectBanner from "@/components/Project/ProjectBanner/ProjectBanner";
+import ProjectContents from "@/components/Project/ProjectContents/ProjectContents";
 import ProjectLinkList from "@/components/Project/ProjectLinkList/ProjectLinkList";
 import ProjectSpec from "@/components/Project/ProjectSpec/ProjectSpec";
 import ProjectSummary from "@/components/Project/ProjectSummary/ProjectSummary";
@@ -23,8 +23,6 @@ const Id = () => {
     get();
   }, [query]);
 
-  console.log(project?.contents);
-
   return (
     <div>
       <h2>PROJECT DETAIL</h2>
@@ -38,21 +36,7 @@ const Id = () => {
       <ProjectSpec skills={project?.skills} />
       <ProjectVideo src={project?.videoPath} />
       <ProjectSummary summary={project?.summary} />
-      {project?.contents.map((content) => {
-        return <ContentsCard type={content.type} key={content.title} />;
-      })}
-      <ContentsCard type="reverse" />
-      <div
-        style={{
-          display: "flex",
-          gap: "20px",
-          maxWidth: "1200px",
-          margin: "40px auto",
-        }}
-      >
-        <ContentsCard type="column" />
-        <ContentsCard type="column" />
-      </div>
+      <ProjectContents contents={project?.contents} />
       <ProjectLinkList
         title={project?.title}
         githubUrl={project?.githubUrl}
