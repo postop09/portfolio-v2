@@ -25,13 +25,14 @@ type Props = {
 };
 
 const InputContents = ({ storageRoot, onChange }: Props) => {
+  const [rowList, setRowList] = useState<any>({});
   const [imageFile, setImageFile] = useState<File>();
   const [contentsInput, setContentsInput] = useState<ProjectContents>({
     type: "default",
     title: "",
     contents: "",
     imagePath: "",
-    columnGroupCode: 0,
+    rowNum: 0,
   });
   const [contentsList, setContentsList] = useState<ProjectContents[]>([]);
 
@@ -60,7 +61,27 @@ const InputContents = ({ storageRoot, onChange }: Props) => {
     };
 
     setContentsList([...contentsList, newData]);
+    // 칼럼에서 일반으로 빠져나갈 때, + 1 처리가 안된 상태로 추가 된다.
+    setRowList((prev: any) => {
+      if (prev?.[`row${contentsInput.rowNum}`]) {
+        return {
+          ...prev,
+          [`row${contentsInput.rowNum}`]: [
+            ...prev[`row${contentsInput.rowNum}`],
+            newData,
+          ],
+        };
+      }
+      return {
+        ...prev,
+        [`row${contentsInput.rowNum}`]: [newData],
+      };
+    });
   };
+
+  useEffect(() => {
+    console.log(contentsInput.rowNum, rowList);
+  }, [contentsInput.rowNum, rowList]);
 
   const handleDeleteContents = (index: number) => {
     setContentsList((prev) => {
@@ -77,39 +98,35 @@ const InputContents = ({ storageRoot, onChange }: Props) => {
   return (
     <label className={s.wrapper}>
       내용
-      <select
-        name="contentsType"
-        value={contentsInput.type}
-        onChange={(e) => {
-          return setContentsInput({
-            ...contentsInput,
-            type: e.target.value,
-            columnGroupCode: 0,
-          });
-        }}
-      >
-        {CONTENTS_TYPE.map((type, index) => {
-          return (
-            <option key={index} value={type.value}>
-              {type.name}
-            </option>
-          );
-        })}
-      </select>
       <div className={s.inputWrapper}>
-        {contentsInput.type === "column" && (
-          <input
-            type="number"
-            placeholder="칼럼박스 번호을 입력해주세요."
-            value={contentsInput.columnGroupCode}
-            onChange={(e) => {
-              return setContentsInput({
-                ...contentsInput,
-                columnGroupCode: Number(e.target.value),
-              });
-            }}
-          />
-        )}
+        <input
+          type="number"
+          placeholder="행 번호을 입력해주세요."
+          onChange={(e) => {
+            return setContentsInput({
+              ...contentsInput,
+              rowNum: Number(e.target.value),
+            });
+          }}
+        />
+        <select
+          name="contentsType"
+          value={contentsInput.type}
+          onChange={(e) => {
+            return setContentsInput({
+              ...contentsInput,
+              type: e.target.value,
+            });
+          }}
+        >
+          {CONTENTS_TYPE.map((type, index) => {
+            return (
+              <option key={index} value={type.value}>
+                {type.name}
+              </option>
+            );
+          })}
+        </select>
         <input
           type="text"
           placeholder="제목을 입력해주세요."
@@ -153,9 +170,8 @@ const InputContents = ({ storageRoot, onChange }: Props) => {
           return (
             <li className={s.listWrapper} key={index}>
               <span>
-                {contents.type === "column" &&
-                  `Group ${contents.columnGroupCode} / `}
-                {contentsTypeName(contents.type)} / {contents.title}
+                {`row${contents.rowNum}`} / {contentsTypeName(contents.type)} /{" "}
+                {contents.title}
               </span>
               <button
                 type="button"

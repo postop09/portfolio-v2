@@ -23,6 +23,8 @@ const Id = () => {
     get();
   }, [query]);
 
+  console.log(project?.contents);
+
   return (
     <div>
       <h2>PROJECT DETAIL</h2>
@@ -36,8 +38,10 @@ const Id = () => {
       <ProjectSpec skills={project?.skills} />
       <ProjectVideo src={project?.videoPath} />
       <ProjectSummary summary={project?.summary} />
-      <ContentsCard />
-      <ContentsCard type="switch" />
+      {project?.contents.map((content) => {
+        return <ContentsCard type={content.type} key={content.title} />;
+      })}
+      <ContentsCard type="reverse" />
       <div
         style={{
           display: "flex",

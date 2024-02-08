@@ -5,7 +5,7 @@ export type ProjectContents = {
   title: string;
   contents: string;
   imagePath: string;
-  columnGroupCode?: number;
+  rowNum?: number;
 };
 
 export type ProjectDTO = {

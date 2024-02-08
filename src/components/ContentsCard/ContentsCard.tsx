@@ -2,7 +2,7 @@ import s from "./ContentsCard.module.css";
 import Image from "next/image";
 
 type Props = {
-  type?: "default" | "switch" | "column";
+  type?: "default" | "reverse" | "column";
 };
 
 const ContentsCard = ({ type = "default" }: Props) => {
@@ -10,8 +10,8 @@ const ContentsCard = ({ type = "default" }: Props) => {
     isDefault: () => {
       return type === "default";
     },
-    isSwitch: () => {
-      return type === "switch";
+    isReverse: () => {
+      return type === "reverse";
     },
     isColumn: () => {
       return type === "column";
@@ -21,7 +21,7 @@ const ContentsCard = ({ type = "default" }: Props) => {
   return (
     <article
       className={
-        layoutType.isSwitch()
+        layoutType.isReverse()
           ? s.wrapperSwitch
           : layoutType.isColumn()
             ? s.wrapperColumn
