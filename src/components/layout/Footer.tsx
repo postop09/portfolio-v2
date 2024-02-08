@@ -1,3 +1,4 @@
+import Link from "next/link";
 import s from "./Footer.module.css";
 import Image from "next/image";
 
@@ -8,24 +9,27 @@ const Footer = () => {
         <p className={s.followTitle}>FOLLOW ME</p>
         <ul className={s.followListWrapper}>
           <li>
-            <button type="button">
+            <Link
+              href="https://github.com/postop09"
+              className={s.gitBtn}
+              target="_blank"
+            >
               <Image
-                src="/assets/favicon/favicon-96x96.png"
+                src="/assets/icon/icon_github.png"
                 alt=""
                 width={40}
                 height={40}
               />
-            </button>
+            </Link>
           </li>
           <li>
-            <button type="button">
-              <Image
-                src="/assets/favicon/favicon-96x96.png"
-                alt=""
-                width={40}
-                height={40}
-              />
-            </button>
+            <Link
+              href="https://watchwebs.tistory.com/"
+              className={s.blogBtn}
+              target="_blank"
+            >
+              B
+            </Link>
           </li>
         </ul>
       </div>

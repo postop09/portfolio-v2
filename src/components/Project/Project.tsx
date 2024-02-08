@@ -1,12 +1,21 @@
 import Image from "next/image";
 import s from "./Project.module.css";
+import Link from "next/link";
 
-const Project = () => {
+type Props = {
+  src: string;
+  title: string;
+  startDt: string;
+  endDt: string;
+  href: string;
+};
+
+const Project = ({ src, title, startDt, endDt, href }: Props) => {
   return (
     <article className={s.wrapper}>
-      <button type="button" className={s.wrapper}>
+      <Link href={href} className={s.wrapper}>
         <Image
-          src="/assets/img/img_banner.jpg"
+          src={src}
           alt=""
           width={380}
           height={480}
@@ -14,9 +23,9 @@ const Project = () => {
           className={s.imgProject}
         />
         <div className={s.txtWrapper}>
-          <small className={s.subTxt}>SONY-a6000</small>
+          <small className={s.subTxt}>{`${startDt} ~ ${endDt}` || "-"}</small>
           <div className={s.titleWrapper}>
-            <h3 className={s.title}>프레임 하나의 힘</h3>
+            <h3 className={s.title}>{title}</h3>
             <Image
               src="/assets/icon/icon_caret.png"
               alt="프로젝트 자세히 보러가기"
@@ -26,7 +35,7 @@ const Project = () => {
             />
           </div>
         </div>
-      </button>
+      </Link>
     </article>
   );
 };

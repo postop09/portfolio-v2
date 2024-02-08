@@ -1,0 +1,42 @@
+.wrapper {
+  padding: 100px 20px;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.layout {
+  display: flex;
+}
+
+.layout section {
+  flex: 1;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.inputWrapper input {
+  padding: 5px;
+}
+
+.createBtn {
+  border-radius: 3px;
+  padding: 10px;
+  font-weight: 500;
+  color: white;
+  background-color: #5865f5;
+}

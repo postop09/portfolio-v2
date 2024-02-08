@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px;
+}
+
+.imgWrapper {
+  overflow: hidden;
+}
+
+.imgMain {
+  object-fit: contain;
+  transform: translateX(15%);
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.skill {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 30px;
+}

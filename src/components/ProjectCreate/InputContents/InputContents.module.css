@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.wrapper select {
+  padding: 5px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inputWrapper input {
+  padding: 5px;
+}
+
+.btnAdd {
+  padding: 7px 10px;
+  border-radius: 3px;
+  color: white;
+  background-color: #262626;
+}
+
+.listWrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.listWrapper span {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.listWrapper button {
+  color: #de2b2b;
+}
