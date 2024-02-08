@@ -4,6 +4,7 @@ import { Pagination } from "swiper/modules";
 import s from "./ProjectList.module.css";
 import useGetProjects from "@/hooks/useGetProjects";
 import Link from "next/link";
+import { deleteProject } from "@/apis/projects.api";
 
 const ProjectList = () => {
   const { projectList } = useGetProjects();
@@ -13,7 +14,7 @@ const ProjectList = () => {
       <div className={s.titleWrapper}>
         <strong className={s.title}>PROJECTS</strong>
         {process.env.NODE_ENV === "development" && (
-          <Link href="/project/create" className={s.add}>
+          <Link href="/project/create" className={s.btnAdd}>
             +
           </Link>
         )}
@@ -37,6 +38,15 @@ const ProjectList = () => {
                   endDt={project.endDt}
                   href={`/project/${project.id}`}
                 />
+                <button
+                  type="button"
+                  className={s.btnDelete}
+                  onClick={() => {
+                    return deleteProject(project.id!);
+                  }}
+                >
+                  삭제하기
+                </button>
               </SwiperSlide>
             );
           })}
