@@ -27,16 +27,19 @@
   margin: auto;
 }
 
-.test {
+.imgWrapper {
   position: relative;
   max-height: 400px;
   flex: 1;
+  background-color: #ddd;
 }
 
 .imgMain {
   position: relative !important;
   display: block;
   object-fit: contain;
+  width: auto !important;
+  margin: auto;
 }
 
 .txtWrapper {

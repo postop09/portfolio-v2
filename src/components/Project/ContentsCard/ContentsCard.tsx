@@ -8,7 +8,7 @@ type Props = {
   contents: string;
 };
 
-const ContentsCard = ({ type = "default" }: Props) => {
+const ContentsCard = ({ type = "default", src, title, contents }: Props) => {
   const layoutType = {
     isDefault: () => {
       return type === "default";
@@ -31,22 +31,12 @@ const ContentsCard = ({ type = "default" }: Props) => {
             : s.wrapper
       }
     >
-      <div className={s.test}>
-        <Image
-          src="/assets/img/img_banner.jpg"
-          alt=""
-          fill
-          className={s.imgMain}
-        />
+      <div className={s.imgWrapper}>
+        <Image src={src} alt="" fill className={s.imgMain} />
       </div>
       <div className={layoutType.isColumn() ? "" : s.txtWrapper}>
-        <h6 className={s.title}>뛰어난 촬영 감가쿠</h6>
-        <p className={s.contents}>
-          나는 속도와 정확도로 정의되며 결정적인 순간을 쉽게 포착할 수 있습니다.
-          뷰파인더 블랙아웃 없이 풀 AF/AE 트래킹4으로 최대 120fps의 연속 촬영이
-          가능하며, 고도의 AI 처리 유닛이 매우 높은 정밀도와 안정성으로 피사체를
-          인식합니다.
-        </p>
+        <h6 className={s.title}>{title}</h6>
+        <p className={s.contents}>{contents}</p>
       </div>
     </article>
   );
