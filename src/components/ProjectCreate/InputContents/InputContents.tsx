@@ -1,31 +1,17 @@
 import { useEffect, useState } from "react";
 import s from "./InputContents.module.css";
 import { uploadFile } from "@/apis/firebase.api";
-import { ProjectContents } from "@/types/projects.type";
-
-const CONTENTS_TYPE = [
-  {
-    name: "기본",
-    value: "default",
-  },
-  {
-    name: "좌우반전",
-    value: "reverse",
-  },
-  {
-    name: "세로",
-    value: "column",
-  },
-];
+import { ProjectContents, ProjectContentsRow } from "@/types/projects.type";
+import { CONST_PROJECT } from "@/constants/project.const";
 
 type Props = {
   storageRoot: string;
   // eslint-disable-next-line no-unused-vars
-  onChange: (params: ProjectContents[]) => void;
+  onChange: (params: ProjectContentsRow) => void;
 };
 
 const InputContents = ({ storageRoot, onChange }: Props) => {
-  const [rowList, setRowList] = useState<any>({});
+  const [rowList, setRowList] = useState<ProjectContentsRow>({});
   const [imageFile, setImageFile] = useState<File>();
   const [contentsInput, setContentsInput] = useState<ProjectContents>({
     type: "default",
@@ -49,19 +35,22 @@ const InputContents = ({ storageRoot, onChange }: Props) => {
 
   const handleAddContents = async () => {
     if (!imageFile) {
-      return;
+      return alert("파일이 선택되지 않았습니다. 다시 선택해주세요.");
     }
+
     const imagePath = await uploadFile(imageFile, `${storageRoot}/contents`);
+
     if (!imagePath) {
-      return;
+      return alert(
+        "파일 변환 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.",
+      );
     }
+
     const newData = {
       ...contentsInput,
       imagePath,
     };
 
-    setContentsList([...contentsList, newData]);
-    // 칼럼에서 일반으로 빠져나갈 때, + 1 처리가 안된 상태로 추가 된다.
     setRowList((prev: any) => {
       if (prev?.[`row${contentsInput.rowNum}`]) {
         return {
@@ -77,23 +66,21 @@ const InputContents = ({ storageRoot, onChange }: Props) => {
         [`row${contentsInput.rowNum}`]: [newData],
       };
     });
+
+    setContentsList([...contentsList, newData]);
   };
 
-  useEffect(() => {
-    console.log(contentsInput.rowNum, rowList);
-  }, [contentsInput.rowNum, rowList]);
-
-  const handleDeleteContents = (index: number) => {
-    setContentsList((prev) => {
-      const array = [...prev];
-      array.splice(index, 1);
-      return array;
-    });
-  };
+  // const handleDeleteContents = (index: number) => {
+  //   setContentsList((prev) => {
+  //     const array = [...prev];
+  //     array.splice(index, 1);
+  //     return array;
+  //   });
+  // };
 
   useEffect(() => {
-    onChange(contentsList);
-  }, [contentsList]);
+    onChange(rowList);
+  }, [rowList]);
 
   return (
     <label className={s.wrapper}>
@@ -119,7 +106,7 @@ const InputContents = ({ storageRoot, onChange }: Props) => {
             });
           }}
         >
-          {CONTENTS_TYPE.map((type, index) => {
+          {CONST_PROJECT.CONTENTS_TYPE.map((type, index) => {
             return (
               <option key={index} value={type.value}>
                 {type.name}
@@ -173,14 +160,6 @@ const InputContents = ({ storageRoot, onChange }: Props) => {
                 {`row${contents.rowNum}`} / {contentsTypeName(contents.type)} /{" "}
                 {contents.title}
               </span>
-              <button
-                type="button"
-                onClick={() => {
-                  return handleDeleteContents(index);
-                }}
-              >
-                X
-              </button>
             </li>
           );
         })}

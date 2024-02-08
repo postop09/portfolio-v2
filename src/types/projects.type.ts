@@ -8,9 +8,13 @@ export type ProjectContents = {
   rowNum?: number;
 };
 
+export type ProjectContentsRow = {
+  [key: string]: ProjectContents | ProjectContents[];
+};
+
 export type ProjectDTO = {
   id?: string;
-  contents: ProjectContents[];
+  contents: ProjectContentsRow;
   githubUrl: string;
   pageUrl: string;
   isTeamProject: boolean;

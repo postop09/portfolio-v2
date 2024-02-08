@@ -13,7 +13,7 @@ const ProjectCreate = () => {
   const [selectedImage, setSelectedImage] = useState<File>();
   const [selectedVideo, setSelectedVideo] = useState<File>();
   const [fieldData, setFieldData] = useState<ProjectDTO>({
-    contents: [],
+    contents: {},
     githubUrl: "",
     pageUrl: "",
     isTeamProject: true,
