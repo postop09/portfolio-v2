@@ -7,7 +7,12 @@ import {
   getDoc,
   getDocs,
 } from "firebase/firestore";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import {
+  deleteObject,
+  getDownloadURL,
+  ref,
+  uploadBytes,
+} from "firebase/storage";
 
 export const getCollection = async (collectionName: string): Promise<any> => {
   try {
@@ -68,4 +73,9 @@ export const uploadFile = async (file: File, storageRoot: string) => {
   const storageRef = ref(storage, `${storageRoot}/${file.name}`);
   const snap = await uploadBytes(storageRef, file);
   return await getDownloadURL(snap.ref);
+};
+
+export const deleteFile = async (storageRoot: string) => {
+  const storageRef = ref(storage, `${storageRoot}`);
+  return await deleteObject(storageRef);
 };

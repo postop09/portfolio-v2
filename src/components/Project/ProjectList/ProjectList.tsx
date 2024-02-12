@@ -44,7 +44,10 @@ const ProjectList = () => {
                     type="button"
                     className={s.btnDelete}
                     onClick={() => {
-                      return handleDeleteProject(project.id!);
+                      return handleDeleteProject({
+                        docId: project.id!,
+                        projectTitle: project.title,
+                      });
                     }}
                   >
                     삭제하기
