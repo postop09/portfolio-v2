@@ -38,15 +38,17 @@ const ProjectList = () => {
                   endDt={project.endDt}
                   href={`/project/${project.id}`}
                 />
-                <button
-                  type="button"
-                  className={s.btnDelete}
-                  onClick={() => {
-                    return deleteProject(project.id!);
-                  }}
-                >
-                  삭제하기
-                </button>
+                {process.env.NODE_ENV === "development" && (
+                  <button
+                    type="button"
+                    className={s.btnDelete}
+                    onClick={() => {
+                      return deleteProject(project.id!);
+                    }}
+                  >
+                    삭제하기
+                  </button>
+                )}
               </SwiperSlide>
             );
           })}
