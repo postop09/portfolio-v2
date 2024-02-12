@@ -1,17 +1,11 @@
 import { getProjects } from "@/apis/projects.api";
-import { ProjectDTO } from "@/types/projects.type";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const useGetProjects = () => {
-  const [projectList, setProjectList] = useState<ProjectDTO[]>([]);
-
-  useEffect(() => {
-    const getProjectList = async () => {
-      const res = await getProjects();
-      setProjectList(res);
-    };
-    getProjectList();
-  }, []);
+  const { data: projectList = [] } = useQuery({
+    queryKey: ["getProjectList"],
+    queryFn: getProjects,
+  });
 
   return { projectList };
 };

@@ -1,4 +1,3 @@
-import { uploadFile } from "@/apis/firebase.api";
 import InputFile from "./InputFile/InputFile";
 import InputPeriod from "./InputPeriod/InputPeriod";
 import InputSkills from "./InputSkills/InputSkills";
@@ -6,8 +5,8 @@ import InputTeamProject from "./InputTeamProject/InputTeamProject";
 import s from "./ProjectCreate.module.css";
 import { ProjectDTO } from "@/types/projects.type";
 import { useState } from "react";
-import { createProject } from "@/apis/projects.api";
 import InputContents from "./InputContents/InputContents";
+import useCreateProject from "@/hooks/useCreateProject";
 
 const ProjectCreate = () => {
   const [selectedImage, setSelectedImage] = useState<File>();
@@ -26,28 +25,11 @@ const ProjectCreate = () => {
     startDt: "",
     endDt: "",
   });
-
-  const handleSubmit = async () => {
-    if (!selectedImage || !selectedVideo) {
-      return alert("파일이 선택되지 않았습니다. 다시 선택해주세요.");
-    }
-
-    const imagePath = await uploadFile(selectedImage, fieldData.title);
-    const videoPath = await uploadFile(selectedVideo, fieldData.title);
-
-    if (!imagePath || !videoPath) {
-      return alert(
-        "파일 변환 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.",
-      );
-    }
-
-    const newData = {
-      ...fieldData,
-      imagePath,
-      videoPath,
-    };
-    createProject(newData);
-  };
+  const { handleCreateProject } = useCreateProject(
+    selectedImage,
+    selectedVideo,
+    fieldData,
+  );
 
   return (
     <section className={s.wrapper}>
@@ -135,7 +117,13 @@ const ProjectCreate = () => {
               return setFieldData({ ...fieldData, contents: value });
             }}
           />
-          <button type="submit" className={s.createBtn} onClick={handleSubmit}>
+          <button
+            type="submit"
+            className={s.createBtn}
+            onClick={() => {
+              return handleCreateProject();
+            }}
+          >
             생성하기
           </button>
         </section>
