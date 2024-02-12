@@ -4,10 +4,11 @@ import { Pagination } from "swiper/modules";
 import s from "./ProjectList.module.css";
 import useGetProjects from "@/hooks/useGetProjects";
 import Link from "next/link";
-import { deleteProject } from "@/apis/projects.api";
+import useDeleteProject from "@/hooks/useDeleteProject";
 
 const ProjectList = () => {
   const { projectList } = useGetProjects();
+  const { handleDeleteProject } = useDeleteProject();
 
   return (
     <div className={s.wrapper}>
@@ -43,7 +44,7 @@ const ProjectList = () => {
                     type="button"
                     className={s.btnDelete}
                     onClick={() => {
-                      return deleteProject(project.id!);
+                      return handleDeleteProject(project.id!);
                     }}
                   >
                     삭제하기
