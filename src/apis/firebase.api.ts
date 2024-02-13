@@ -10,6 +10,7 @@ import {
 import {
   deleteObject,
   getDownloadURL,
+  listAll,
   ref,
   uploadBytes,
 } from "firebase/storage";
@@ -77,5 +78,9 @@ export const uploadFile = async (file: File, storageRoot: string) => {
 
 export const deleteFile = async (storageRoot: string) => {
   const storageRef = ref(storage, `${storageRoot}`);
-  await deleteObject(storageRef);
+  const fileList = await listAll(storageRef);
+  fileList.items.map(async (file) => {
+    const fileRef = ref(storage, `${storageRoot}/${file.name}`);
+    await deleteObject(fileRef);
+  });
 };

@@ -12,10 +12,13 @@ const useDeleteProject = () => {
   const { mutate: handleDeleteProject } = useMutation({
     mutationFn: async ({ docId, projectTitle }: Params) => {
       await deleteFile(projectTitle);
-      return await deleteProject(docId);
+      await deleteProject(docId);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["getProjectList"] });
+    },
+    onError: (error) => {
+      console.log(error);
     },
   });
   return { handleDeleteProject };

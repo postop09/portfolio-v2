@@ -38,7 +38,7 @@ const InputContents = ({ storageRoot, onChange }: Props) => {
       return alert("파일이 선택되지 않았습니다. 다시 선택해주세요.");
     }
 
-    const imagePath = await uploadFile(imageFile, `${storageRoot}/contents`);
+    const imagePath = await uploadFile(imageFile, storageRoot);
 
     if (!imagePath) {
       return alert(
