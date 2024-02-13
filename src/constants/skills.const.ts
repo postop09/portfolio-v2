@@ -1,5 +1,5 @@
 const HARD_SKILL = {
-  title: "언어",
+  title: "언어 및 기술",
   src: "/assets/icon/icon_language.png",
 };
 

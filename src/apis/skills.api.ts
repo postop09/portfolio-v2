@@ -4,6 +4,9 @@ import { SkillsDTO, SoftSkillDTO } from "@/types/skills.type";
 
 export const getSkills = async (): Promise<SkillsDTO> => {
   const skills = await getCollection("skills");
+  skills.sort((a: any, b: any) => {
+    return a.value - b.value;
+  });
   return {
     title: CONST_SKILLS.HARD_SKILL.title,
     src: CONST_SKILLS.HARD_SKILL.src,
@@ -13,6 +16,9 @@ export const getSkills = async (): Promise<SkillsDTO> => {
 
 export const getTools = async (): Promise<SkillsDTO> => {
   const tools = await getCollection("tools");
+  tools.sort((a: any, b: any) => {
+    return a.value - b.value;
+  });
   return {
     title: CONST_SKILLS.TOOL.title,
     src: CONST_SKILLS.TOOL.src,
@@ -22,6 +28,9 @@ export const getTools = async (): Promise<SkillsDTO> => {
 
 export const getCommunicationTools = async (): Promise<SkillsDTO> => {
   const tools = await getCollection("communication-tools");
+  tools.sort((a: any, b: any) => {
+    return a.value - b.value;
+  });
   return {
     title: CONST_SKILLS.COMMUNICATION_TOOL.title,
     src: CONST_SKILLS.COMMUNICATION_TOOL.src,
