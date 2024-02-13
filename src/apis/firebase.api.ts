@@ -1,6 +1,19 @@
 import { db, storage } from "@/pages/_app";
-import { addDoc, collection, doc, getDoc, getDocs } from "firebase/firestore";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDoc,
+  getDocs,
+} from "firebase/firestore";
+import {
+  deleteObject,
+  getDownloadURL,
+  listAll,
+  ref,
+  uploadBytes,
+} from "firebase/storage";
 
 export const getCollection = async (collectionName: string): Promise<any> => {
   try {
@@ -45,6 +58,15 @@ export const createDoc = async (collectionName: string, fieldData: any) => {
   }
 };
 
+export const deleteDocData = async (collectionName: string, docId: string) => {
+  try {
+    const docRef = doc(db, collectionName, docId);
+    await deleteDoc(docRef);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 export const uploadFile = async (file: File, storageRoot: string) => {
   if (!file) {
     return;
@@ -52,4 +74,13 @@ export const uploadFile = async (file: File, storageRoot: string) => {
   const storageRef = ref(storage, `${storageRoot}/${file.name}`);
   const snap = await uploadBytes(storageRef, file);
   return await getDownloadURL(snap.ref);
+};
+
+export const deleteFile = async (storageRoot: string) => {
+  const storageRef = ref(storage, `${storageRoot}`);
+  const fileList = await listAll(storageRef);
+  fileList.items.map(async (file) => {
+    const fileRef = ref(storage, `${storageRoot}/${file.name}`);
+    await deleteObject(fileRef);
+  });
 };

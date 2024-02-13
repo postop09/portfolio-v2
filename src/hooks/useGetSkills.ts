@@ -1,21 +1,19 @@
 import { getCommunicationTools, getSkills, getTools } from "@/apis/skills.api";
-import { SkillsDTO } from "@/types/skills.type";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const useGetSkills = () => {
-  const [skillCategory, setSkillCategory] = useState<SkillsDTO[]>([]);
+  const getSkillCategory = async () => {
+    return await Promise.all([
+      getSkills(),
+      getTools(),
+      getCommunicationTools(),
+    ]);
+  };
 
-  useEffect(() => {
-    const getSkillCategory = async () => {
-      const res = await Promise.all([
-        getSkills(),
-        getTools(),
-        getCommunicationTools(),
-      ]);
-      setSkillCategory(res);
-    };
-    getSkillCategory();
-  }, []);
+  const { data: skillCategory = [] } = useQuery({
+    queryKey: ["getSkillCategory"],
+    queryFn: getSkillCategory,
+  });
 
   return { skillCategory };
 };

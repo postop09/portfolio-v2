@@ -6,6 +6,7 @@ import "@/styles/global.css";
 import "@/styles/slide.css";
 import { getStorage } from "firebase/storage";
 // import { getAnalytics } from "firebase/analytics";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -25,12 +26,21 @@ export const db = getFirestore(app);
 export const storage = getStorage();
 // export const storageRef = ref(storage, "all-reborn");
 // export const analytics = getAnalytics(app);
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Layout>
-        <Component {...pageProps} />
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+        </QueryClientProvider>
       </Layout>
     </>
   );

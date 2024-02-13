@@ -1,3 +1,4 @@
+import s from "./ProjectContents.module.css";
 import { ProjectContentsRow } from "@/types/projects.type";
 import React from "react";
 import ContentsCard from "../ContentsCard/ContentsCard";
@@ -12,43 +13,24 @@ const ProjectContents = ({ contents }: Props) => {
 
   return objecyKeys.map((key, index) => {
     const row = contents?.[key];
-    if (row?.length! >= 2) {
-      return (
-        <div
-          key={index}
-          style={{
-            display: "flex",
-            gap: "20px",
-            maxWidth: "1200px",
-            margin: "40px auto",
-          }}
-        >
-          {row?.map((item, rowIndex) => {
-            return (
-              <ContentsCard
-                key={rowIndex}
-                type={item.type}
-                src={item.imagePath}
-                title={item.title}
-                contents={item.contents}
-              />
-            );
-          })}
-        </div>
-      );
-    } else {
-      return row?.map((item, rowIndex) => {
-        return (
-          <ContentsCard
-            key={rowIndex}
-            type={item.type}
-            src={item.imagePath}
-            title={item.title}
-            contents={item.contents}
-          />
-        );
-      });
-    }
+    return (
+      <div
+        key={index}
+        className={row?.length! >= 2 ? s.columnsWrapper : s.wrapper}
+      >
+        {row?.map((item, rowIndex) => {
+          return (
+            <ContentsCard
+              key={rowIndex}
+              type={item.type}
+              src={item.imagePath}
+              title={item.title}
+              contents={item.contents}
+            />
+          );
+        })}
+      </div>
+    );
   });
 };
 

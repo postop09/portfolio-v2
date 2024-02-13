@@ -1,17 +1,11 @@
 import { getSoftSkills } from "@/apis/skills.api";
-import { SoftSkillDTO } from "@/types/skills.type";
-import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const useGetSoftSkills = () => {
-  const [softSkillList, setSoftSkillList] = useState<SoftSkillDTO[]>([]);
-
-  useEffect(() => {
-    const getSoftSkillList = async () => {
-      const res = await getSoftSkills();
-      setSoftSkillList(res);
-    };
-    getSoftSkillList();
-  }, []);
+  const { data: softSkillList = [] } = useQuery({
+    queryKey: ["getSoftSkills"],
+    queryFn: getSoftSkills,
+  });
 
   return { softSkillList };
 };
