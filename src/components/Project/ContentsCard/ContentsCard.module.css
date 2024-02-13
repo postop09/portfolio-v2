@@ -38,14 +38,14 @@
   position: relative !important;
   display: block;
   object-fit: contain;
-  width: auto !important;
   margin: auto;
+  max-height: 400px;
 }
 
 .txtWrapper {
   flex: 1;
   padding: 40px;
-  width: 100%;
+  max-width: 600px;
 }
 
 .title {

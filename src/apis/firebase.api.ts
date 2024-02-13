@@ -77,5 +77,5 @@ export const uploadFile = async (file: File, storageRoot: string) => {
 
 export const deleteFile = async (storageRoot: string) => {
   const storageRef = ref(storage, `${storageRoot}`);
-  return await deleteObject(storageRef);
+  await deleteObject(storageRef);
 };

@@ -1,3 +1,4 @@
+import s from "./ProjectContents.module.css";
 import { ProjectContentsRow } from "@/types/projects.type";
 import React from "react";
 import ContentsCard from "../ContentsCard/ContentsCard";
@@ -15,12 +16,7 @@ const ProjectContents = ({ contents }: Props) => {
     return (
       <div
         key={index}
-        style={{
-          display: "flex",
-          gap: "20px",
-          maxWidth: "1200px",
-          margin: "40px auto",
-        }}
+        className={row?.length! >= 2 ? s.columnsWrapper : s.wrapper}
       >
         {row?.map((item, rowIndex) => {
           return (
