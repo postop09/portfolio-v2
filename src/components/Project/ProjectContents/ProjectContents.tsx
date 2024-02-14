@@ -11,27 +11,54 @@ const ProjectContents = ({ contents }: Props) => {
   const objecyKeys = Object.keys(contents || {});
   objecyKeys.sort();
 
-  return objecyKeys.map((key, index) => {
-    const row = contents?.[key];
-    return (
-      <div
-        key={index}
-        className={row?.length! >= 2 ? s.columnsWrapper : s.wrapper}
-      >
-        {row?.map((item, rowIndex) => {
-          return (
-            <ContentsCard
-              key={rowIndex}
-              type={item.type}
-              src={item.imagePath}
-              title={item.title}
-              contents={item.contents}
-            />
-          );
-        })}
-      </div>
-    );
-  });
+  return (
+    <section>
+      <h3 className={s.titleHide}>프로젝트 상세 내용</h3>
+      {objecyKeys.map((key, index) => {
+        const row = contents?.[key];
+        return (
+          <div
+            key={index}
+            className={row?.length! >= 2 ? s.columnsWrapper : s.wrapper}
+          >
+            {row?.map((item, rowIndex) => {
+              return (
+                <ContentsCard
+                  key={rowIndex}
+                  type={item.type}
+                  src={item.imagePath}
+                  title={item.title}
+                  contents={item.contents}
+                />
+              );
+            })}
+          </div>
+        );
+      })}
+    </section>
+  );
+
+  // return objecyKeys.map((key, index) => {
+  //   const row = contents?.[key];
+  //   return (
+  //     <div
+  //       key={index}
+  //       className={row?.length! >= 2 ? s.columnsWrapper : s.wrapper}
+  //     >
+  //       {row?.map((item, rowIndex) => {
+  //         return (
+  //           <ContentsCard
+  //             key={rowIndex}
+  //             type={item.type}
+  //             src={item.imagePath}
+  //             title={item.title}
+  //             contents={item.contents}
+  //           />
+  //         );
+  //       })}
+  //     </div>
+  //   );
+  // });
 };
 
 export default ProjectContents;

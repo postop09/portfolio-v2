@@ -3,13 +3,13 @@ import s from "./Banner.module.css";
 
 const Banner = () => {
   return (
-    <div className={s.bannerWrapper}>
+    <section className={s.bannerWrapper}>
       <div className={s.txtWrapper}>
-        <strong className={s.title}>
+        <h2 className={s.title}>
           찰칵.
           <br />
           가장 나다운 순간
-        </strong>
+        </h2>
         <small className={s.subTxt}>조윤식-PORTFOLIO</small>
       </div>
       <div className={s.imgWrapper}>
@@ -22,7 +22,7 @@ const Banner = () => {
           className={s.imgBanner}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

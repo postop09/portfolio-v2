@@ -6,8 +6,8 @@ const HardSkillList = () => {
   const { skillCategory } = useGetSkills();
 
   return (
-    <div className={s.wrapper}>
-      <strong className={s.title}>SKILLS</strong>
+    <section className={s.wrapper}>
+      <h2 className={s.title}>SKILLS</h2>
       <ul className={s.listWrapper}>
         {skillCategory.map((theme) => {
           return (
@@ -17,7 +17,7 @@ const HardSkillList = () => {
           );
         })}
       </ul>
-    </div>
+    </section>
   );
 };
 

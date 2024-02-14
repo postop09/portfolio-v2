@@ -8,8 +8,8 @@ const SoftSkillList = () => {
   const { softSkillList } = useGetSoftSkills();
 
   return (
-    <div className={s.wrapper}>
-      <strong className={s.title}>SOFT SKILLS</strong>
+    <section className={s.wrapper}>
+      <h2 className={s.title}>SOFT SKILLS</h2>
       <ul className={s.listWrapper}>
         {softSkillList.map((softSkill, index) => {
           return (
@@ -28,7 +28,7 @@ const SoftSkillList = () => {
           );
         })}
       </ul>
-    </div>
+    </section>
   );
 };
 

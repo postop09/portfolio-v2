@@ -24,10 +24,10 @@ const Id = () => {
   }, [query]);
 
   return (
-    <div>
+    <>
       <h2>PROJECT DETAIL</h2>
       <ProjectBanner
-        src={project?.imagePath}
+        src={project?.imagePath || ""}
         title={project?.title}
         startDt={project?.startDt}
         endDt={project?.endDt}
@@ -43,7 +43,7 @@ const Id = () => {
         pageUrl={project?.pageUrl}
         imgSrc={project?.imagePath}
       />
-    </div>
+    </>
   );
 };
 
