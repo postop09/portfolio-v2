@@ -6,11 +6,11 @@ const Banner = () => {
     <div className={s.bannerWrapper}>
       <div className={s.txtWrapper}>
         <strong className={s.title}>
-          최신형 카메라 니콘 ZF
+          찰칵.
           <br />
-          파괴.혼돈.망가
+          가장 나다운 순간
         </strong>
-        <small className={s.subTxt}>ANG-GIMODDI</small>
+        <small className={s.subTxt}>조윤식-PORTFOLIO</small>
       </div>
       <div className={s.imgWrapper}>
         <Image
