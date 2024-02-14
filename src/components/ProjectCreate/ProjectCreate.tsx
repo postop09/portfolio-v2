@@ -16,7 +16,7 @@ const ProjectCreate = () => {
     githubUrl: "",
     pageUrl: "",
     isTeamProject: true,
-    period: "",
+    projectIndex: 1,
     skills: [],
     summary: "",
     title: "",
@@ -39,6 +39,22 @@ const ProjectCreate = () => {
           <h3>미리보기</h3>
         </section>
         <section className={s.inputContainer}>
+          <label className={s.inputWrapper}>
+            프로젝트 순서
+            <input
+              type="number"
+              id="index"
+              name="index"
+              min={0}
+              value={fieldData.projectIndex}
+              onChange={(e) => {
+                return setFieldData({
+                  ...fieldData,
+                  projectIndex: Number(e.target.value),
+                });
+              }}
+            />
+          </label>
           <label className={s.inputWrapper}>
             프로젝트 이름
             <input
