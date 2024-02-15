@@ -1,10 +1,11 @@
 import type { AppProps } from "next/app";
 import { initializeApp } from "firebase/app";
+import { GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 import Layout from "@/components/Layouts/Layout";
 import "@/styles/global.css";
 import "@/styles/slide.css";
-import { getStorage } from "firebase/storage";
 // import { getAnalytics } from "firebase/analytics";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -19,13 +20,13 @@ const firebaseConfig = {
   appId: "1:889907494357:web:f6a8385c4ed9fb4343515c",
   measurementId: "G-H11JC7KM7H",
 };
+// export const analytics = getAnalytics(app);
 
 const app = initializeApp(firebaseConfig);
-
+export const provider = new GoogleAuthProvider();
 export const db = getFirestore(app);
 export const storage = getStorage();
-// export const storageRef = ref(storage, "all-reborn");
-// export const analytics = getAnalytics(app);
+
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
