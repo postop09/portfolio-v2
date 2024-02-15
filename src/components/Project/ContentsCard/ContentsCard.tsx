@@ -32,7 +32,14 @@ const ContentsCard = ({ type = "default", src, title, contents }: Props) => {
       }
     >
       <div className={s.imgWrapper}>
-        <Image src={src} alt="" fill className={s.imgMain} />
+        <Image
+          src={src}
+          alt=""
+          fill
+          sizes="auto"
+          priority
+          className={s.imgMain}
+        />
       </div>
       <div className={layoutType.isColumn() ? "" : s.txtWrapper}>
         <h6 className={s.title}>{title}</h6>

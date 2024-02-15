@@ -7,6 +7,10 @@ const useGetProjects = () => {
     queryFn: getProjects,
   });
 
+  projectList.sort((a: any, b: any) => {
+    return b.projectIndex - a.projectIndex;
+  });
+
   return { projectList };
 };
 

@@ -24,6 +24,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+  flex: 1;
   margin: 40px auto 0;
 }
 
@@ -37,7 +38,7 @@
 .imgMain {
   position: relative !important;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
   margin: auto;
   max-height: 400px;
 }
@@ -55,6 +56,7 @@
 }
 
 .contents {
+  min-height: 100px;
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 2px;

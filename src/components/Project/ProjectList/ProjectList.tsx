@@ -11,9 +11,9 @@ const ProjectList = () => {
   const { handleDeleteProject } = useDeleteProject();
 
   return (
-    <div className={s.wrapper}>
+    <section className={s.wrapper}>
       <div className={s.titleWrapper}>
-        <strong className={s.title}>PROJECTS</strong>
+        <h2 className={s.title}>PROJECTS</h2>
         {process.env.NODE_ENV === "development" && (
           <Link href="/project/create" className={s.btnAdd}>
             +
@@ -58,7 +58,7 @@ const ProjectList = () => {
           })}
         </Swiper>
       </div>
-    </div>
+    </section>
   );
 };
 

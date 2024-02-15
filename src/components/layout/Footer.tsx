@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className={s.wrapper}>
+    <footer className={s.wrapper}>
       <div className={s.followWrapper}>
         <p className={s.followTitle}>FOLLOW ME</p>
         <ul className={s.followListWrapper}>
@@ -54,7 +54,7 @@ const Footer = () => {
       <small className={s.warnningTxt}>
         Copyright © 한국은영어로Korea Corporation. I want All rights reserved.
       </small>
-    </div>
+    </footer>
   );
 };
 

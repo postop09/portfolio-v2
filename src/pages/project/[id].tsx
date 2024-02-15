@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { getProject } from "@/apis/projects.api";
 import ProjectBanner from "@/components/Project/ProjectBanner/ProjectBanner";
 import ProjectContents from "@/components/Project/ProjectContents/ProjectContents";
@@ -24,10 +25,13 @@ const Id = () => {
   }, [query]);
 
   return (
-    <div>
+    <>
+      <Head>
+        <title>조윤식 포트폴리오 | 프로젝트</title>
+      </Head>
       <h2>PROJECT DETAIL</h2>
       <ProjectBanner
-        src={project?.imagePath}
+        src={project?.imagePath || ""}
         title={project?.title}
         startDt={project?.startDt}
         endDt={project?.endDt}
@@ -43,7 +47,7 @@ const Id = () => {
         pageUrl={project?.pageUrl}
         imgSrc={project?.imagePath}
       />
-    </div>
+    </>
   );
 };
 

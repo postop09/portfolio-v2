@@ -2,7 +2,7 @@ import s from "./ProjectBanner.module.css";
 import Image from "next/image";
 
 type Props = {
-  src: string | undefined;
+  src: string;
   title: string | undefined;
   startDt: string | undefined;
   endDt: string | undefined;
@@ -19,7 +19,7 @@ const ProjectBanner = ({
   return (
     <section className={s.wrapper}>
       <Image
-        src={src || ""}
+        src={src}
         alt=""
         fill
         sizes="auto"

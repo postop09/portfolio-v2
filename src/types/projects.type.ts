@@ -27,5 +27,5 @@ export type ProjectDTO = {
   title: string;
   imagePath: string;
   videoPath: string;
-  period: string;
+  projectIndex: number;
 };

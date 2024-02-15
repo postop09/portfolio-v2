@@ -3,26 +3,26 @@ import s from "./Banner.module.css";
 
 const Banner = () => {
   return (
-    <div className={s.bannerWrapper}>
+    <section className={s.bannerWrapper}>
       <div className={s.txtWrapper}>
-        <strong className={s.title}>
-          최신형 카메라 니콘 ZF
+        <h2 className={s.title}>
+          찰칵.
           <br />
-          파괴.혼돈.망가
-        </strong>
-        <small className={s.subTxt}>ANG-GIMODDI</small>
+          가장 나다운 순간
+        </h2>
+        <small className={s.subTxt}>조윤식-PORTFOLIO</small>
       </div>
       <div className={s.imgWrapper}>
         <Image
           src="/assets/img/img_camera.png"
           alt="배너"
-          width={550}
-          height={400}
+          width={600}
+          height={600}
           priority
           className={s.imgBanner}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
