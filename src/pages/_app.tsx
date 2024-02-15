@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import Layout from "@/components/Layout/Layout";
+import Layout from "@/components/Layouts/Layout";
 import "@/styles/global.css";
 import "@/styles/slide.css";
 import { getStorage } from "firebase/storage";
