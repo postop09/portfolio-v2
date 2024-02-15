@@ -1,3 +1,5 @@
+import path from "path";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -8,6 +10,10 @@ const nextConfig = {
         hostname: "firebasestorage.googleapis.com",
       },
     ],
+  },
+  webpack(config) {
+    config.resolve.alias["@"] = path.join(__dirname, "src");
+    return config;
   },
 };
 
