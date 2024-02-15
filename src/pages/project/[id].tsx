@@ -31,7 +31,7 @@ const Id = () => {
       </Head>
       <h2>PROJECT DETAIL</h2>
       <ProjectBanner
-        src={project?.imagePath || ""}
+        src={project?.imagePath}
         title={project?.title}
         startDt={project?.startDt}
         endDt={project?.endDt}

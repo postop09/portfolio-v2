@@ -15,7 +15,6 @@
 }
 
 .imgSkill {
-  display: block;
   object-fit: contain;
   transform: translateX(40%);
   transition: all 0.2s;

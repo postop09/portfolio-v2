@@ -15,7 +15,7 @@ const Banner = () => {
       <div className={s.imgWrapper}>
         <Image
           src="/assets/img/img_camera.png"
-          alt="배너"
+          alt=""
           width={600}
           height={600}
           priority

@@ -8,11 +8,10 @@
 }
 
 .wrapper:hover {
-  opacity: 0.95;
+  opacity: 0.90;
 }
 
 .imgProject {
-  display: block;
   object-fit: cover;
 }
 

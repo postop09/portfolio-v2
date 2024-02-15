@@ -29,18 +29,13 @@
 }
 
 .imgWrapper {
-  position: relative;
-  max-height: 400px;
   flex: 1;
   background-color: #ddd;
 }
 
 .imgMain {
-  position: relative !important;
-  display: block;
   object-fit: cover;
-  margin: auto;
-  max-height: 400px;
+  width: 100%;
 }
 
 .txtWrapper {

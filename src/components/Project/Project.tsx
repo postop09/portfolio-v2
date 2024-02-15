@@ -31,7 +31,6 @@ const Project = ({ src, title, startDt, endDt, href }: Props) => {
               alt="프로젝트 자세히 보러가기"
               width={20}
               height={20}
-              priority
             />
           </div>
         </div>
