@@ -35,9 +35,8 @@ const ContentsCard = ({ type = "default", src, title, contents }: Props) => {
         <Image
           src={src}
           alt=""
-          fill
-          sizes="auto"
-          priority
+          width={560}
+          height={380}
           className={s.imgMain}
         />
       </div>
