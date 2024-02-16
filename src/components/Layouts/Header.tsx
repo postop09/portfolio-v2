@@ -22,11 +22,12 @@ const Header = () => {
       await setPersistence(auth, browserSessionPersistence);
       const result = await signInWithPopup(auth, provider);
       const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential?.accessToken;
-      const { user } = result;
-      console.log("TOKEN", token);
-      console.log("USER", user);
-      console.log("RESULT", result);
+      console.log(credential);
+      // const token = credential?.accessToken;
+      // const { user } = result;
+      // console.log("TOKEN", token);
+      // console.log("USER", user);
+      // console.log("RESULT", result);
     } catch (error: any) {
       const { email } = error.customData;
       const credential = GoogleAuthProvider.credentialFromError(error);

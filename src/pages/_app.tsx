@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import { initializeApp } from "firebase/app";
-import { GoogleAuthProvider, getAuth, onAuthStateChanged } from "firebase/auth";
+import { GoogleAuthProvider, getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import Layout from "@/components/Layouts/Layout";
@@ -37,14 +37,6 @@ export const queryClient = new QueryClient({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log(user);
-    } else {
-      console.log("AUTH REQUIRED");
-    }
-  });
   return (
     <>
       <Layout>
