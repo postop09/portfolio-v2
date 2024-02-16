@@ -5,16 +5,19 @@ import s from "./ProjectList.module.css";
 import useGetProjects from "@/hooks/useGetProjects";
 import Link from "next/link";
 import useDeleteProject from "@/hooks/useDeleteProject";
+import { USER } from "@/constants/user.const";
+import useFirebaseGetAuth from "@/hooks/useFirebaseGetAuth";
 
 const ProjectList = () => {
   const { projectList } = useGetProjects();
   const { handleDeleteProject } = useDeleteProject();
+  const { email } = useFirebaseGetAuth();
 
   return (
     <section className={s.wrapper}>
       <div className={s.titleWrapper}>
         <h2 className={s.title}>PROJECTS</h2>
-        {process.env.NODE_ENV === "development" && (
+        {email === USER.EMAIL && (
           <Link href="/project/create" className={s.btnAdd}>
             +
           </Link>
@@ -39,7 +42,7 @@ const ProjectList = () => {
                   endDt={project.endDt}
                   href={`/project/${project.id}`}
                 />
-                {process.env.NODE_ENV === "development" && (
+                {email === USER.EMAIL && (
                   <button
                     type="button"
                     className={s.btnDelete}

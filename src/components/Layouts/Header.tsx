@@ -1,18 +1,11 @@
 import Image from "next/image";
 import s from "./Header.module.css";
 import Link from "next/link";
-import { provider } from "@/pages/_app";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import useFirebaseSign from "@/hooks/useFirebaseSign";
 
 const Header = () => {
-  const login = async () => {
-    const auth = getAuth();
-    const result = await signInWithPopup(auth, provider);
-    const { user } = result;
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential?.accessToken;
-    console.log(token, user);
-  };
+  const { isOpen, setIsOpen, logIn, logOut, auth } = useFirebaseSign();
+
   return (
     <header className={s.wrapper}>
       <h1>
@@ -20,7 +13,12 @@ const Header = () => {
           CYS
         </Link>
       </h1>
-      <button type="button" onClick={login}>
+      <button
+        type="button"
+        onClick={() => {
+          return setIsOpen(!isOpen);
+        }}
+      >
         <Image
           src="/assets/favicon/favicon-32x32.png"
           width={24}
@@ -30,6 +28,22 @@ const Header = () => {
           priority
         />
       </button>
+      <div className={`${s.btnWrapper} ${isOpen && s.on}`}>
+        <button
+          type="button"
+          onClick={logIn}
+          className={auth.currentUser ? "" : s.on}
+        >
+          로그인
+        </button>
+        <button
+          type="button"
+          onClick={logOut}
+          className={auth.currentUser ? s.on : ""}
+        >
+          로그아웃
+        </button>
+      </div>
     </header>
   );
 };
