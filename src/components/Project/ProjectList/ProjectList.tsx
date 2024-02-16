@@ -5,23 +5,13 @@ import s from "./ProjectList.module.css";
 import useGetProjects from "@/hooks/useGetProjects";
 import Link from "next/link";
 import useDeleteProject from "@/hooks/useDeleteProject";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useState } from "react";
 import { USER } from "@/constants/user.const";
+import useFirebaseGetAuth from "@/hooks/useFirebaseGetAuth";
 
 const ProjectList = () => {
   const { projectList } = useGetProjects();
   const { handleDeleteProject } = useDeleteProject();
-  const [email, setEmail] = useState("");
-  const auth = getAuth();
-
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setEmail(user.email || "");
-    } else {
-      setEmail("");
-    }
-  });
+  const { email } = useFirebaseGetAuth();
 
   return (
     <section className={s.wrapper}>

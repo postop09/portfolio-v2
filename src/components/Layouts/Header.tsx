@@ -1,41 +1,10 @@
 import Image from "next/image";
 import s from "./Header.module.css";
 import Link from "next/link";
-import { provider } from "@/pages/_app";
-import {
-  GoogleAuthProvider,
-  browserSessionPersistence,
-  getAuth,
-  setPersistence,
-  signInWithPopup,
-  signOut,
-} from "firebase/auth";
-import { useState } from "react";
+import useFirebaseSign from "@/hooks/useFirebaseSign";
 
 const Header = () => {
-  const [isOpenLogin, setIsOpenLogin] = useState(false);
-  const auth = getAuth();
-
-  const signIn = async () => {
-    setIsOpenLogin(false);
-    try {
-      await setPersistence(auth, browserSessionPersistence);
-      const result = await signInWithPopup(auth, provider);
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      console.log(credential);
-      // const token = credential?.accessToken;
-      // const { user } = result;
-      // console.log("TOKEN", token);
-      // console.log("USER", user);
-      // console.log("RESULT", result);
-    } catch (error: any) {
-      const { email } = error.customData;
-      const credential = GoogleAuthProvider.credentialFromError(error);
-      console.log("ERROR", error.code, error.message);
-      console.log("EMAIL", email);
-      console.log("CREDENTIAL", credential);
-    }
-  };
+  const { isOpen, setIsOpen, logIn, logOut, auth } = useFirebaseSign();
 
   return (
     <header className={s.wrapper}>
@@ -47,7 +16,7 @@ const Header = () => {
       <button
         type="button"
         onClick={() => {
-          return setIsOpenLogin(!isOpenLogin);
+          return setIsOpen(!isOpen);
         }}
       >
         <Image
@@ -59,20 +28,17 @@ const Header = () => {
           priority
         />
       </button>
-      <div className={`${s.btnWrapper} ${isOpenLogin && s.on}`}>
+      <div className={`${s.btnWrapper} ${isOpen && s.on}`}>
         <button
           type="button"
-          onClick={signIn}
+          onClick={logIn}
           className={auth.currentUser ? "" : s.on}
         >
           로그인
         </button>
         <button
           type="button"
-          onClick={() => {
-            setIsOpenLogin(false);
-            return signOut(auth);
-          }}
+          onClick={logOut}
           className={auth.currentUser ? s.on : ""}
         >
           로그아웃
