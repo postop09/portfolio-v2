@@ -1,40 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 포트폴리오_v2
 
-## Getting Started
+## 🟣프로젝트 설명
 
-First, run the development server:
+이 프로젝트는 2022년 3월 쯤 구현된 [기존의 포트폴리오 페이지](https://postop09.github.io/Portfolio/src/pages/index.html) 프로젝트의 개선된 버전입니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+기존 포트폴리오의 내용 수정을 위해서는 매번 HTML에 코드를 작성하고, JS 코드를 수정해야하는 상태였습니다. 이번을 기회로 포트폴리오 내용을 CRUD 할 수 있는 환경을 만들고자 했습니다. UI 는 저의 취미가 카메라인 것을 참고하여 컨셉을 기획했습니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🟣빌드 및 실행방법
+실행 주소: [포트폴리오 사이트로 이동](https://portfolio-cys.vercel.app/)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 🟣개발 환경
+### 기간
+2024.02.15 ~ 진행중
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 인원
+개인 개발
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### 기술
+- Next.js
+- TypeScript
+- CSS module
+- React-Query
+- Firebase Storage
+- Firebase Firestore
+- Vercel
+- Github
+- Figma(Figjam)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🟣제작 과정 및 기능
+타임라인, 페이지 리뷰
 
-## Learn More
+## 🟣정리
 
-To learn more about Next.js, take a look at the following resources:
+### 👾개발 전 목표/고려사항
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 👾배우고 느낀 점
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 👾아쉬운 점
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🟣리마인드
+더 공부할 것
