@@ -29,32 +29,43 @@
 
 ## ⚫️제작 과정 및 기능
 ### 로그인/로그아웃
+![video_login](https://github.com/postop09/portfolio-v2/assets/93017923/f550102a-64ec-4fcd-bc43-9346d46e388d)
 - Firebase Authentication 를 이용하여 사용자 인증
 - Google 인증 이용
 - 보안을 고려하여 SessionPersistance 로 인증 지속성 설정
 
 ### 프로젝트 조회
+![video_projectlist](https://github.com/postop09/portfolio-v2/assets/93017923/1587bab4-4fbe-4585-af20-1e88bbe16610)
 - 지금까지 진행한 프로젝트 이력 목록
 - Firebase 전체 읽기 보안 규칙 설정
 - 프로젝트 순서 key 값을 이용하여 정렬
 
+### 프로젝트 상세조회
+![video_project_detail](https://github.com/postop09/portfolio-v2/assets/93017923/80f1e900-d763-44b2-96cc-d512f7e6bba8)
+- 프로젝트에 관련된 내용 전체를 확인 (개발 내용, 깃헙, 페이지 제공)
+- 프로젝트 내용 설명 UI 배치 커스텀 설정
+
 ### 프로젝트 생성
+![video_project_create](https://github.com/postop09/portfolio-v2/assets/93017923/f2bf813a-1694-4e7c-98cc-234ccb19d609)
 - 관리자인 경우 생성 가능
 - Firebase 인증된 사용자만 프로젝트 생성이 가능 하도록 보안 규칙 설정
 - SKILLS 데이터 목록(기술, 환경, 협업)을 하나로 맵핑하여 스킬 선택
 - 프로젝트의 내용을 크게 [기본, 반전, 세로] 세가지 타입으로 구성하여, 원하는 배치로 생성할 수 있도록 구현
 
 ### 프로젝트 삭제
+![video_project_delete](https://github.com/postop09/portfolio-v2/assets/93017923/5057cc3d-2199-4fe9-8e49-c8b8d1b4e8de)
 - 관리자인 경우 삭제 가능
 - Firebase 인증된 사용자만 프로젝트 삭제가 가능 하도록 보안 규칙 설정
 - 삭제 시 Firestore, Storage 파일 삭제 로직 연결
 
 ### SKILLS 조회
+![video_skills](https://github.com/postop09/portfolio-v2/assets/93017923/655a6f55-8281-4cf4-b0bf-f2d9758c0c53)
 - 사용 경험 혹은 사용중인 기술 목록
 - SKILLS 를 크게 [기술, 환경도구, 협업도구] 세 분야로 분류하여 데이터 정의
 - Animation Effect UI
 
 ### SOFT SKILLS 조회
+![video_softskills](https://github.com/postop09/portfolio-v2/assets/93017923/6e2b765a-1995-434d-aa1e-e11cd36ad603)
 - 개인적인 성향 및 강점 목록
 - Animation Effect UI
 
