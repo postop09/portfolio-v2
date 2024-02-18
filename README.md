@@ -70,6 +70,8 @@
 - Animation Effect UI
 
 ### 이미지 최적화
+<img src="https://firebasestorage.googleapis.com/v0/b/thanos-ba3dc.appspot.com/o/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%2Fimg_portfolio4.png?alt=media&token=598b7963-a7fe-4a92-84be-771fc36d9e72" width="480" />
+
 - Next.js 의 `<Image />` 태그의 속성을 활용
 - 이미지 평균 크기 100kB -> 72kB 로 개선
 - 이미지 다운로드 평균 속도 1.2s -> 0.4s 로 개선
