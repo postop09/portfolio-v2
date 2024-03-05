@@ -1,5 +1,5 @@
 .wrapper {
-  width: 1200px;
+  max-width: 1200px;
   margin: auto;
   padding: 80px 0;
 }
@@ -10,6 +10,7 @@
   font-weight: 200;
   text-align: center;
   letter-spacing: 3px;
+  word-break: keep-all;
 }
 
 .projectName {
@@ -20,4 +21,5 @@
 .listWrapper {
   display: flex;
   gap: 20px;
+  overflow: scroll;
 }
