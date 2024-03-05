@@ -16,6 +16,9 @@
   margin: auto;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 520px) {
+    display: block;
+  }
 }
 
 .listWrapper > li {
@@ -24,10 +27,4 @@
 
 .listWrapper > li:last-child {
   border: none;
-}
-
-@media screen and (max-width: 520px) {
-  .listWrapper {
-    display: block;
-  }
 }
