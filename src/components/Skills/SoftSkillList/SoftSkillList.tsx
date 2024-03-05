@@ -18,6 +18,9 @@ const SoftSkillList = () => {
               onMouseOver={() => {
                 return setTabIndex(index);
               }}
+              onFocus={() => {
+                return setTabIndex(index);
+              }}
             >
               <SoftSkill
                 title={softSkill.title}

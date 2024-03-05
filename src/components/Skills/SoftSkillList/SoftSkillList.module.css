@@ -1,4 +1,6 @@
 .wrapper {
+  max-width: 1200px;
+  margin: auto;
   height: 500px;
   padding: 60px 0;
   text-align: center;
@@ -7,11 +9,12 @@
 .title {
   display: block;
   padding: 0 0 20px;
-  font-size: 42px;
+  font-size: var(--font-heading2);
 }
 
 .listWrapper {
   display: flex;
-  justify-content: center;
   gap: 20px;
+  width: 100%;
+  overflow: scroll;
 }

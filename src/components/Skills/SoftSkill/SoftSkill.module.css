@@ -1,5 +1,5 @@
 .wrapper {
-  background-color: #e4e7eb;
+  background-color: var(--color-gray2);
   width: 246.6px;
   height: 200px;
   padding: 40px 20px;
@@ -8,7 +8,7 @@
 }
 
 .on {
-  background-color: #212530;
+  background-color: var(--color-gray9);
   width: 400px;
   height: 300px;
   padding: 40px;
@@ -17,12 +17,12 @@
 
 .title {
   display: block;
-  font-size: 22px;
+  font-size: var(--font-heading5);
   margin-bottom: 20px;
 }
 
 .contents {
-  font-size: 18px;
+  font-size: var(--font-contents2);
   letter-spacing: 1px;
   line-height: 28px;
   word-break: keep-all;

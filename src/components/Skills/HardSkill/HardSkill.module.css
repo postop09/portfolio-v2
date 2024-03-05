@@ -1,23 +1,23 @@
 .wrapper {
   position: relative;
-  width: 400px;
   padding: 40px 20px;
   text-align: left;
   overflow: hidden;
-  background-color: #f4f4f4;
+  background-color: var(--color-gray1);
   transition: all 0.2s;
   cursor: default;
 }
 
 .wrapper:hover,
 .wrapper:focus {
-  background-color: #5865f5;
+  background-color: var(--color-blue);
 }
 
 .imgSkill {
   object-fit: contain;
   transform: translateX(40%);
   transition: all 0.2s;
+  width: 100%;
 }
 
 .wrapper:hover .imgSkill,
@@ -39,13 +39,16 @@
 }
 
 .skill {
-  font-size: 20px;
+  font-size: var(--font-contents1);
   font-weight: 300;
   letter-spacing: 2px;
-  line-height: 35px;
+  line-height: 32px;
+  @media screen and (max-width: 800px) {
+    line-height: 25px;
+  }
 }
 
 .txtCategory {
-  font-size: 28px;
+  font-size: var(--font-heading4);
   font-weight: 500;
 }

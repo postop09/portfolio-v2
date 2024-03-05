@@ -1,23 +1,28 @@
 .wrapper {
   margin-top: 100px;
   padding: 60px 0;
-  background-color: #f4f4f4;
+  background-color: var(--color-gray1);
   text-align: center;
 }
 
 .title {
   display: block;
   padding: 0 0 20px;
-  font-size: 42px;
+  font-size: var(--font-heading2);
 }
 
 .listWrapper {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 520px) {
+    display: block;
+  }
 }
 
 .listWrapper > li {
-  border-right: 1px solid #e1e1e1;
+  border-right: 1px solid var(--color-gray3);
 }
 
 .listWrapper > li:last-child {

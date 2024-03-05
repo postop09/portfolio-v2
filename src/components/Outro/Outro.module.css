@@ -1,11 +1,11 @@
 .wrapper {
-  background-image: linear-gradient(to right, #ff00fb3d, #f4f4f4);
+  background-image: linear-gradient(to right, #ff00fb3d, var(--color-gray1));
   padding: 80px 0;
   text-align: center;
 }
 
 .title {
-  font-size: 34px;
+  font-size: var(--font-heading3);
   letter-spacing: 3px;
   line-height: 50px;
 }

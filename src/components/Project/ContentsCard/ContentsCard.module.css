@@ -30,7 +30,7 @@
 
 .imgWrapper {
   flex: 1;
-  background-color: #ddd;
+  background-color: var(--color-gray3);
 }
 
 .imgMain {
@@ -46,16 +46,16 @@
 
 .title {
   margin-bottom: 10px;
-  font-size: 30px;
+  font-size: var(--font-heading4);
   font-weight: 400;
 }
 
 .contents {
   min-height: 100px;
-  font-size: 14px;
+  font-size: var(--font-base);
   font-weight: 300;
   letter-spacing: 2px;
   line-height: 25px;
-  color: #706c7a;
+  color: var(--color-gray6);
   word-break: keep-all;
 }

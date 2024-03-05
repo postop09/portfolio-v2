@@ -25,7 +25,8 @@ const ProjectList = () => {
       </div>
       <div>
         <Swiper
-          slidesPerView={3}
+          slidesPerView="auto"
+          spaceBetween={20}
           pagination={{
             clickable: true,
           }}
