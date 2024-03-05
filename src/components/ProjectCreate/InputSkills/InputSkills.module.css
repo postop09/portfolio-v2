@@ -5,7 +5,7 @@
 
 .wrapper label {
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: var(--font-contents2);
   font-weight: 500;
 }
 
@@ -30,5 +30,5 @@
 
 .skillDelete {
   margin-left: 5px;
-  color: #de2b2b;
+  color: var(--color-red);
 }
