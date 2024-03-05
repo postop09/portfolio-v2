@@ -1,3 +1,5 @@
+@import "./variable.css";
+
 @font-face {
   font-family: 'Pretendard';
   src: url(/assets/font/PretendardVariable.woff2) format('woff2');
@@ -26,10 +28,11 @@ time, mark, audio, video {
   border: 0;
   font-size: 16px;
   vertical-align: baseline;
-  /* color: white; */
+  font-size: 14px;
+  /* color: white;
   @media screen and (max-width: 480px) {
     font-size: 14px;
-  }
+  } */
 }
 
 /* HTML5 display-role reset for older browsers */

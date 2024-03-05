@@ -3,11 +3,11 @@
   margin-top: 80px;
   padding: 60px 20px;
   background-color: black;
-  color: #bbb;
+  color: var(--color-gray4);
 }
 
 .followTitle {
-  font-size: 24px;
+  font-size: var(--font-heading5);
 }
 
 .followWrapper {
@@ -37,11 +37,11 @@
   font-size: 28px;
   font-weight: 800;
   color: white;
-  background-color: #262626;
+  background-color: var(--color-gray10);
 }
 
 .divLine {
-  border-color: #2f2f2f;
+  border-color: var(--color-gray5);
   margin-bottom: 30px;
 }
 
@@ -51,7 +51,7 @@
 
 .warnningTxt {
   display: block;
-  font-size: 12px;
+  font-size: var(--font-contents3);
   font-weight: 300;
   letter-spacing: 1px;
   line-height: 18px;

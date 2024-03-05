@@ -16,11 +16,11 @@
 
 .title {
   margin-bottom: 10px;
-  font-size: 32px;
+  font-size: var(--font-heading4);
 }
 
 .skill {
-  font-size: 20px;
+  font-size: var(--font-contents1);
   font-weight: 300;
   letter-spacing: 2px;
   line-height: 30px;

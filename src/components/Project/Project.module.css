@@ -28,14 +28,14 @@
 }
 
 .subTxt {
-  font-size: 14px;
+  font-size: var(--font-base);
   font-weight: 700;
   line-height: 25px;
 }
 
 .title {
   margin-right: 14px;
-  font-size: 22px;
+  font-size: var(--font-contents1);
   font-weight: 400;
-  color: #3d3d3d;
+  color: var(--color-gray7);
 }

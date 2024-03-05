@@ -2,7 +2,7 @@
   position: relative;
   height: 600px;
   padding: 100px;
-  background: #141723;
+  background: var(--color-gray11);
 }
 
 .imgBanner {
@@ -17,17 +17,17 @@
 }
 
 .title {
-  font-size: 42px;
+  font-size: var(--font-heading2);
 }
 
 .period {
   display: block;
   margin: 30px 0 10px;
-  font-size: 13px;
+  font-size: var(--font-base);
   font-weight: 300;
 }
 
 .isTeamProject {
-  font-size: 13px;
+  font-size: var(--font-base);
   font-weight: 300;
 }

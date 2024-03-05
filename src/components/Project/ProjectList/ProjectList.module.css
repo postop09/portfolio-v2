@@ -11,19 +11,19 @@
 
 .title {
   display: block;
-  font-size: 42px;
+  font-size: var(--font-heading2);
 }
 
 .btnAdd {
   margin-left: 10px;
-  font-size: 30px;
+  font-size: var(--font-heading4);
   line-height: 20px;
-  color: #5865f5;
+  color: var(--color-blue);
 }
 
 .btnDelete {
   float: right;
   margin: 10px 20px 0 0;
   padding: 3px 0;
-  color: #de2b2b;
+  color: var(--color-red);
 }

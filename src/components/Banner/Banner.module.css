@@ -12,7 +12,7 @@
 }
 
 .title {
-  font-size: 76px;
+  font-size: var(--font-heading1);
   line-height: 90px;
   word-break: keep-all;
 }
@@ -20,9 +20,9 @@
 .subTxt {
   display: block;
   margin-top: 40px;
-  font-size: 14px;
+  font-size: var(--font-base);
   font-weight: 400;
-  color: gray;
+  color: var(--color-gray5);
 }
 
 .imgWrapper {
