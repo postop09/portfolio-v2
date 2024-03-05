@@ -8,7 +8,7 @@ type Props = {
 
 const SoftSkill = ({ isHover, title, contents }: Props) => {
   return (
-    <div className={`${s.wrapper} ${isHover ? s.on : ""}`}>
+    <div tabIndex={0} className={`${s.wrapper} ${isHover ? s.on : ""}`}>
       <strong className={s.title}>{title}</strong>
       <p className={s.contents}>{contents}</p>
     </div>

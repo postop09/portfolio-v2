@@ -1,4 +1,6 @@
 .wrapper {
+  max-width: 1200px;
+  margin: auto;
   height: 500px;
   padding: 60px 0;
   text-align: center;
@@ -12,6 +14,7 @@
 
 .listWrapper {
   display: flex;
-  justify-content: center;
   gap: 20px;
+  width: 100%;
+  overflow: scroll;
 }
