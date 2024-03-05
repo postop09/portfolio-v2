@@ -14,6 +14,9 @@
   left: 100px;
   bottom: 100px;
   color: white;
+  @media screen and (max-width: 520px) {
+    left: 30px;
+  }
 }
 
 .title {
