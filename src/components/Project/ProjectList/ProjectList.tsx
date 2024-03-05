@@ -25,19 +25,12 @@ const ProjectList = () => {
       </div>
       <div>
         <Swiper
-          slidesPerView={1}
+          slidesPerView="auto"
+          spaceBetween={20}
           pagination={{
             clickable: true,
           }}
           modules={[Pagination]}
-          breakpoints={{
-            800: {
-              slidesPerView: 2,
-            },
-            1200: {
-              slidesPerView: 3,
-            },
-          }}
           className="projectSwiper"
         >
           {projectList.map((project) => {

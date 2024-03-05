@@ -48,7 +48,6 @@
 
 @media screen and (max-width: 520px) {
   .title {
-    font-size: var(--font-heading2);
-    line-height: 50px;
+    line-height: 70px;
   }
 }

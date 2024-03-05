@@ -11,4 +11,8 @@
   bottom: -30px !important;
 }
 
+.projectSwiper .swiper-slide {
+  width: fit-content !important;
+}
+
 
