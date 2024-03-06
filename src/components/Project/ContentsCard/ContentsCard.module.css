@@ -6,6 +6,9 @@
   max-width: 1200px;
   margin: auto;
   padding: 40px 0;
+  @media screen and (max-width: 520px) {
+    display: block;
+  }
 }
 
 .wrapperSwitch {
@@ -17,6 +20,9 @@
   max-width: 1200px;
   margin: auto;
   padding: 40px 0;
+  @media screen and (max-width: 520px) {
+    display: block;
+  }
 }
 
 .wrapperColumn {
@@ -30,6 +36,8 @@
 
 .imgWrapper {
   flex: 1;
+  border: 1px solid var(--color-gray2);
+  box-shadow: 1px 1px 5px 0px var(--color-gray2);
   background-color: var(--color-gray3);
 }
 
@@ -42,6 +50,15 @@
   flex: 1;
   padding: 40px;
   max-width: 600px;
+  @media screen and (max-width: 520px) {
+    padding: 20px;
+  }
+}
+
+.txtWrapperColumn {
+  @media screen and (max-width: 520px) {
+    padding: 0 20px;
+  }
 }
 
 .title {

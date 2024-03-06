@@ -6,6 +6,8 @@
   background-color: var(--color-gray1);
   transition: all 0.2s;
   cursor: default;
+  color: black;
+  width: 100%;
 }
 
 .wrapper:hover,

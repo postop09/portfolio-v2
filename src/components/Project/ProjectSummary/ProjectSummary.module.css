@@ -4,6 +4,9 @@
   background-image: linear-gradient(to right, black, var(--color-gray7));
   color: white;
   text-align: center;
+  @media screen and (max-width: 800px) {
+    padding: 40px 10px;
+  }
 }
 
 .txtWrapper {
