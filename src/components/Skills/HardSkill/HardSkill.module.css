@@ -43,6 +43,7 @@
   font-weight: 300;
   letter-spacing: 2px;
   line-height: 32px;
+  color: black;
   @media screen and (max-width: 800px) {
     line-height: 25px;
   }
@@ -51,4 +52,5 @@
 .txtCategory {
   font-size: var(--font-heading4);
   font-weight: 500;
+  color: black;
 }
